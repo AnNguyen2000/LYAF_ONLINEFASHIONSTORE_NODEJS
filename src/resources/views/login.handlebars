@@ -1,0 +1,44 @@
+<div class="form__wrapper">
+    <div class="errorToast">
+        <span>
+            {{error}}
+        </span>
+        <span>   
+            Vui lòng thử lại !
+        </span>
+    </div>
+    <div class="form__login">
+    
+        <form action="/login" method="post">
+            <div class="form__title">
+                <span class="form__title--name">
+                    Đăng Nhập
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tên đăng nhập:</label>
+                <input type="text" name="username" class="form-control" placeholder="Nhập tên người dùng">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Mật khẩu:</label>
+                <input type="password" name="password" class="form-control" placeholder="Nhâp mật khẩu">
+            </div>
+            <button type="submit" class="form__login--submit">Đăng nhập</button>
+            <div class="register_ask_toast">
+                <span>Bạn chưa có tài khoản Lyaf?</span>
+                <span class="link_register_btn">Đăng ký ngay</span>
+            </div>
+            {{#if error}}
+             <input type="hidden" id="error" value="true">
+             {{/if}}
+        </form>
+        <div class="social__link">
+                <a href="/login/google"><img src="https://www.designbust.com/download/1016/png/google_logo_png_transparent512.png"/></a>
+        </div>
+    </div>
+    <div class="form__logo">
+        <img class="form__logo--img" src="/img/form_logo.png" alt="">
+    </div>
+   
+</div>
+<script src="/js/access.js"></script>

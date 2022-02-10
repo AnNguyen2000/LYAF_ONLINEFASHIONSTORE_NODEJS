@@ -1,0 +1,127 @@
+
+$componentWidth: 250px;
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+     }
+}
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+     }
+}
+.LYAF-product-component{
+    max-width: $componentWidth;
+    min-width: 175px;
+    border: 1px solid transparent;
+    padding: 5px;
+    flex:  1 0 20%;
+    .LYAF-product-thumbnails{
+        cursor: pointer;
+        position: relative;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        #main-thumbnail{
+            animation-name: fadeInAnimation;
+            animation-fill-mode: both;
+            animation-duration: .5s;
+        }
+        
+        #second-thumbnail{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    .LYAF-product-info{
+        position: relative;
+        #price{
+            position: absolute;
+            top:-30px;
+            font-weight: 600;
+            background-color: transparentize($color: aliceblue, $amount: 0.3);
+            transition: 0.2s;
+            span{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            #true-price{
+                font-size: 16px;
+            }
+            #sale-price{
+                font-size: 13px;
+                text-decoration: line-through red;
+            }
+        }
+
+        #name{
+            font-weight: 600;
+            font-size: 16px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #name:hover{
+            color: deepskyblue;
+        }
+
+        #category{
+            line-height: 1;
+            a{
+                font-weight: 600;
+                font-size: 12px;
+                color: rgb(133, 133, 133);
+            }
+        }
+
+        #rating{
+            display: flex;
+            flex-direction: row;
+            font-weight: 600;
+            justify-content: space-between;
+        }
+    }
+}
+
+.LYAF-product-component:hover{
+    border: 1px solid black;
+
+    .LYAF-product-thumbnails{
+        #main-thumbnail{
+            animation-name: fadeOutAnimation;
+            animation-fill-mode: both;
+            animation-duration: .5s;
+        }
+        #second-thumbnail{
+            animation-name: fadeInAnimation;
+            animation-fill-mode: both;
+            animation-duration: .5s;
+        }
+    }
+
+    .LYAF-product-info{
+        #price{
+            top:-40px;
+        }
+    }
+}

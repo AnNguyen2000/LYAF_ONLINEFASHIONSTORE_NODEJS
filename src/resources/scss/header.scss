@@ -1,0 +1,467 @@
+.LYAF-header{
+    background-color: black;
+}
+
+.text-uppercase {
+    letter-spacing: 0.08em;
+   
+}
+
+.navbar-light .navbar-brand{
+    width: auto;
+    height: 56px;
+    padding: 0;
+}
+.navbar-light .navbar-brand img{
+    max-width: auto;
+    max-height: 100%;
+    margin-right: 0;;
+}
+
+#navbarNavDropdown .nav-item.active{
+    background-color: white;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color: black;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+.LYAF-navbar{
+    padding: 15px;
+}
+
+.LYAF-header-dropdown #dropdown-action{
+    z-index: 10;
+}
+
+.LYAF-header-dropdown .LYAF-product-dropdown{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 600px;
+}
+
+.LYAF-header-dropdown .dropdown-item{
+    font-size: 13px;
+    margin-left: 10px;
+    color: darkgray;
+}
+
+#navbarNavDropdown .nav-item:hover{
+    background-color: white;
+}
+
+.LYAF-header-dropdown .nav-link:hover{
+    color: white;
+}
+
+.LYAF-header-dropdown .dropdown-item:hover{
+    background-color: transparent;
+    color: black;
+}
+
+.LYAF-header-dropdown .dropdown-cluster{
+    flex: 1 1 150px;
+    padding: 10px;
+}
+
+.LYAF-header-dropdown .dropdown-cluster .dropdown-header{
+    color: black;
+}
+
+.LYAF-header-right{
+    display: flex;
+    font-size: 20px;;
+}
+
+.LYAF-header-right div{
+    margin: 5px;
+}
+
+
+.LYAF-header-right .LYAF-header-cart{
+    position: relative;
+    cursor: pointer;
+}
+
+.LYAF-header-right .LYAF-header-cart .LYAF-no-products{
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    color: rgb(12, 7, 7);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.LYAF-header-right .LYAF-header-search,.LYAF-header-cart,.LYAF-header-account{
+    cursor: pointer;
+    color: white;
+    position: relative;
+    .LYAF-header-popup{
+        position: absolute;
+        left: 0;
+        padding: 15px;
+        width: max-content;
+        z-index: 99 !important;
+        font-size: 16px;
+        background-color: white;
+        transform: translate(-100%);
+        color: black;
+        border: 1px solid #818181;
+        display: none;
+    }
+}
+
+.shake:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -1px) rotate(-1deg); }
+    20% { transform: translate(-1px, 0px) rotate(1deg); }
+    30% { transform: translate(1px, 1px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 1px) rotate(-1deg); }
+    60% { transform: translate(-1px, 1px) rotate(0deg); }
+    70% { transform: translate(1px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 1px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+
+/* SEARCH SITE */
+.LYAF-header .LYAF-search-box{
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    right: -500px;
+    background-color: white;
+    padding-top: 30px;
+    transition: 0.5s;
+    overflow: auto;
+}
+
+.LYAF-header  .blur-bg{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 20;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-box-close{
+    position: absolute;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-box-close i{
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.2s;
+}
+.LYAF-header .LYAF-search-box .LYAF-search-box-close i:hover{
+    font-size: 40px;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-box-header{
+    width: 100%;
+    text-align: center;
+    font: 30px;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-input{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-input input{
+    outline: none;
+    padding: 10px;
+    width: 70%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-input i{
+    cursor: pointer;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-output{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-output hr{
+    border: 0;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+    background: #999;
+    width: 70%;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-output .LYAF-search-product{
+    width: 80%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    .price-search{
+        display: flex;
+        flex-direction: row;
+        .true-price{
+            text-decoration: line-through red;
+            font-size: 11px;
+            margin-left: 10px;
+        }
+    }
+}
+.LYAF-header .LYAF-search-box .LYAF-search-output .LYAF-search-product:hover{
+    border: 2px solid black;
+}
+.LYAF-header .LYAF-search-box .LYAF-search-output .LYAF-search-product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    // width: 80%;
+}
+
+.LYAF-header-account-infor, .LYAF-header-login-prompt{
+    a{
+        text-decoration: none;
+        color: black;
+        transition: 0.3s;
+    }
+    a:hover{
+        color: rgb(0, 116, 224);
+    }
+}
+
+.LYAF-header .LYAF-search-box .LYAF-search-output .LYAF-search-product img{
+    flex: 1;
+    max-height: 90px;
+    max-width: 90px;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-more-search a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.LYAF-header .LYAF-search-box .LYAF-more-search a:hover{
+    color: black;
+}
+
+/* END SEARCH SITE */
+/* CART SITE */
+
+.LYAF-header .LYAF-cart-box{
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    right: -500px;
+    background-color: white;
+    padding-top: 30px;
+    transition: 0.5s;
+    overflow: auto;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-box-close{
+    position: absolute;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-box-close i{
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-box-close i:hover{
+    font-size: 40px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-box-header{
+    width: 100%;
+    text-align: center;
+    font: 30px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .true-price{
+    font-size: 11px;;
+    text-decoration: line-through red;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product img{
+    height: 70px;
+    width: 70px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-product-info{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-product-name{
+    width: 100%;
+    padding:3px;
+    font-size: 15px;
+    margin-bottom:0;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-option{
+    width: 100%;
+    padding:3px;
+    margin-bottom:0;
+    font-size: 12px;
+    color: #818181;
+    font-weight: 600;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-quant-price{
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    flex-direction: row;
+    align-items: center;
+}
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-quant{
+    padding: 2px 10px 2px 10px;
+    border: 1px solid #b3b3b3;
+    background-color: #f8f8f8;
+    font-weight: 600;
+    border-right: none;
+    border-left: none;
+}
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-price{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list .LYAF-cart-product .LYAF-cart-product-remove{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    bottom: 0;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-list hr{
+    border: 0;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+    background: #999;
+    width: 70%;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-end-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.LYAF-header .LYAF-cart-box .LYAF-cart-end-list hr{
+    border: 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
+    width: 70%;
+}
+.LYAF-header .LYAF-cart-box .LYAF-cart-sum-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+.LYAF-header .LYAF-cart-box .LYAF-cart-sum-list span{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+} 
+.LYAF-cart-pay-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.LYAF-cart-pay-btn a{
+    padding: 20px;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    margin-bottom: 50px;
+    text-decoration: none;
+    transition: 0.5s
+}
+.LYAF-cart-pay-btn a:hover{
+    background-color: white;
+    color: black;
+}
+/* END CART SITE */
+
+@media screen and (max-width: 640px) {
+    .LYAF-header{
+        .LYAF-search-box,
+        .LYAF-cart-box{
+            width: 300px;
+        }
+        
+    }
+}
+#errorSearch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #error1{
+        font-weight: bold;
+        color: red;
+    }
+
+}

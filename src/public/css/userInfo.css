@@ -1,0 +1,251 @@
+.profile_body {
+  background-color: #e0ebeb;
+  display: flex;
+  height: 100%;
+  justify-content: center; }
+  .profile_body .final-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: end; }
+  .profile_body #sale-price {
+    font-size: 13px;
+    text-decoration: line-through red; }
+  .profile_body #name {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .profile_body #name img {
+      margin-right: 10px;
+      border-radius: 10px; }
+    .profile_body #name a {
+      display: flex;
+      flex-direction: column;
+      color: black; }
+      .profile_body #name a #size-color {
+        font-size: 12px;
+        color: #555555; }
+  .profile_body .profile_menu {
+    width: 30%;
+    height: 1000px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+  .profile_body .profile_menu-detail {
+    width: 90%;
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+  .profile_body .profile_intro {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin-bottom: 20px; }
+  .profile_body .profile_intro span {
+    width: 100%;
+    font-size: 25px;
+    text-align: center; }
+  .profile_body #profile_intro-name {
+    font-weight: bold; }
+  .profile_body .profile_menu-item {
+    border-radius: 5px;
+    height: 50px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .profile_body .profile_menu-item:hover {
+    background-color: black;
+    color: wheat;
+    font-weight: bold;
+    cursor: pointer; }
+  .profile_body .profile_menu-item span {
+    font-size: 20px; }
+  .profile_body .profile_info {
+    width: 50%;
+    height: 100%;
+    padding-bottom: 20px;
+    background-color: antiquewhite;
+    margin-top: 100px;
+    border-radius: 5px; }
+  .profile_body .profile_info-name {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .profile_body .profile_info-name span {
+    border-bottom: 4px solid black; }
+  .profile_body .profile_info-detail {
+    width: 100%;
+    background-color: antiquewhite;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .profile_body .profile_info-detail .form-group {
+    margin-left: 20px;
+    align-self: flex-start;
+    width: 92%; }
+  .profile_body .genderBox {
+    display: flex;
+    justify-content: space-evenly;
+    width: 85%; }
+  .profile_body #gender_male, .profile_body #gender_female {
+    width: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end; }
+  .profile_body .form-check-input {
+    width: 30px;
+    height: 30px;
+    background-color: #da690d; }
+  .profile_body .genderBox span {
+    font-weight: 100;
+    margin-top: -10px; }
+  .profile_body .profileUpdateNotice {
+    width: 90%;
+    height: 40px;
+    border-radius: 50px;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange; }
+  .profile_body .userStatus {
+    margin-top: 100px;
+    width: 60%;
+    height: 100%;
+    padding: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px; }
+    .profile_body .userStatus .address-profile {
+      width: 100%;
+      margin-top: 30px; }
+      .profile_body .userStatus .address-profile td {
+        padding: 10px !important; }
+    .profile_body .userStatus .price-infor .temp-price, .profile_body .userStatus .price-infor .sale-price, .profile_body .userStatus .price-infor .delivery-price, .profile_body .userStatus .price-infor .total-price {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+    .profile_body .userStatus .price-infor .total-price {
+      font-size: 18px; }
+  .profile_body .userStatus-name {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 30px; }
+  .profile_body .userStatus-name span {
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 4px solid black; }
+  .profile_body .table-borderless {
+    width: 90%; }
+    .profile_body .table-borderless td {
+      vertical-align: middle; }
+  .profile_body .proStatus-detail {
+    cursor: pointer; }
+  .profile_body .proStatus-detail:hover {
+    background-color: rgba(112, 107, 98, 0.5); }
+  .profile_body .focus-item {
+    background-color: #0c0c0b;
+    font-weight: bold;
+    color: white; }
+  .profile_body #return-proStatus {
+    margin-left: 5px; }
+  .profile_body .changePass {
+    width: 40%;
+    height: 100%;
+    margin-top: 100px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px; }
+  .profile_body .changePass-detail {
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px; }
+  .profile_body .changePass-detail .form-group {
+    align-self: flex-start;
+    width: 100%; }
+  .profile_body .changePassSubmit {
+    width: 100%;
+    height: 40px;
+    background-color: orange;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white; }
+  .profile_body .changePassSubmit:hover {
+    outline: none;
+    border: none;
+    background-color: #da690d; }
+  .profile_body .profileSubmit {
+    width: 90%;
+    height: 40px;
+    background-color: orange;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .profile_body .profileSubmit:hover {
+    outline: none;
+    border: none;
+    background-color: #da690d; }
+  .profile_body #changeError {
+    width: 30%;
+    height: 20%;
+    background-color: #da690d; }
+  .profile_body .forList {
+    border: 2px solid #0f0e0d; }
+  .profile_body .countName {
+    background-color: black;
+    color: white; }
+  .profile_body .Address-optionList {
+    width: 136px;
+    height: 45px;
+    background-color: black;
+    border-radius: 5px;
+    margin-left: 118px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    margin: 10px 0px 10px 0px; }
+  .profile_body .Address-optionList i {
+    width: 10%; }
+  .profile_body .icon-trash {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; }
+    .profile_body .icon-trash .addressUpdate {
+      width: 30px;
+      margin-left: 40px; }
+
+.rating-modal .LYAF-rating-container #rating span {
+  font-size: 18px; }

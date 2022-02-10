@@ -1,0 +1,127 @@
+{{!-- IMAGE GALLERY https://www.jqueryscript.net/gallery/Feature-rich-Product-Gallery-With-Image-Zoom-xZoom.html  --}}
+{{!-- Thêm croper --}}
+<link rel="stylesheet" href="https://unpkg.com/xzoom/dist/xzoom.css">
+<link rel="stylesheet" href="/css/productDetail.css">
+<div id="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/">Sản phẩm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{data.name}}</li>
+        </ol>
+    </nav>
+</div>
+<div class="LYAF-detail-container">
+    <div class="LYAF-image-detail">
+        <div class="xzoom-container">
+            <img class="xzoom thumbails" src="{{#getData data=data.images indx=0}}{{/getData}}" xoriginal="{{#getData data=data.images indx=0}}{{/getData}}" title="The description goes here" width="900">
+            <div class="xzoom-thumbs">
+                {{#each data.images}}
+                <a href="{{this}}"><img class="xzoom-gallery xactive" width="80" src="{{this}}" title="The description goes here"></a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="LYAF-infor-detail">
+        <div id="name">{{data.name}}</div>
+        <div id="rating">
+            <div class="asddd">
+                <div class="rating-stars">
+                    {{#ratingStar value=data.rating}}
+                    {{/ratingStar}}
+                </div>
+                <div class="rating-value">
+                    {{data.rating}}/5
+                </div>
+            </div>
+            <a class="rating-reviews" href="#">
+                <span id="numbers">{{data.numOfRating}}</span>
+                <span> reviews</span>
+            </a>
+        </div>
+        <hr>
+        <div id="color">
+            <div class="title">Màu sắc</div>
+            <div class="warpper">
+                {{#getColor subProduct = data.subProduct}}
+                    <div id="item" data-id="{{this._id}}" data-productid="{{../data._id}}"><img id="image" src="{{this.thumbnail}}"><span>{{this.name}}</span></div>
+                {{/getColor}}
+                {{!-- <div id="item" class="selected"><img id="image" src="/img/color-black.jpg"><span>Đen</span></div>
+                <div id="item"><img id="image" src="/img/color-red.jpg"><span>Đỏ</span></div>
+                <div id="item"><span class="sold-out"><img src="/img/sold-out.jpg"></span><img id="image" src="/img/color-camo-green.jpg"><span>Camo Xanh lá</span></div>
+                <div id="item"><img id="image" src="/img/color-camo-blue.jpg"><span>Camo Xanh</span></div> --}}
+            </div>
+        </div>
+        <div id="size">
+            <div class="title">Size</div>
+            <div class="warpper">
+            {{#getSize subProduct = data.subProduct}}
+                <div id="item" data-id="{{this._id}}" data-productid="{{data._id}}" ><span>{{this.name}}</span></div>
+            {{/getSize}}
+                {{!-- <div id="item" class="selected"><span>XL</span></div>
+                <div id="item"><span class="sold-out"><img src="/img/sold-out.jpg"></span><span>XXL</span></div>
+                <div id="item"><span>SM</span></div>
+                <div id="item"><span>S</span></div> --}}
+            </div>
+        </div>
+        <div id="quantity">
+            <div class="title">Số lượng</div>
+            <div class="warpper">
+                <button class="btn btn-outline-secondary btn-minus"><i class="fa fa-minus"></i></button>
+                <input id="value" type="number" value="0">
+                <button class="btn btn-outline-secondary btn-plus"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+        <div id="stock">
+            {{!-- <span>Còn lại <span id="number">12</span> sản phẩm</span> --}}
+        </div>
+        <hr>
+        <div class="LYAF-order-section">
+            <div id="price">
+                <div class="warpper">
+                    <div id="value">
+                        {{#if data.isSale}}
+                            <span id="true">{{#saleFormat price=data.price sale=data.sale}} {{/saleFormat}}<span id="currency">đ</span></span>
+                            <span id="sale">{{#priceFormat price=data.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                        {{else}}
+                            <span id="true">{{#priceFormat price=data.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                        {{/if}}
+                    </div>
+                    <span id="slash">/</span>
+                    <span id="unit">Cái</span>
+                </div>
+            </div>
+            <div id="add-cart">
+                <button data-productid="{{data._id}}"><i class="fas fa-cart-plus"></i> Thêm giỏ hàng</button>
+            </div>
+        </div>
+        <hr>
+        <div id="infor-bellow">
+            <span><i class="fas fa-shipping-fast"></i> Giao hàng miễn phí</span>
+            <span><i class="far fa-handshake"></i> Thanh toán khi nhận hàng</span>
+        </div>
+        <hr>
+        <div id="description">
+            <div class="title">Mô tả sản phẩm</div>
+            <div class="warpper">
+                {{{data.desc}}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+<script src="/js/productDetail.js"></script>
+<script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>

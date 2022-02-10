@@ -1,0 +1,331 @@
+.profile_body{
+    background-color: rgb(224, 235, 235);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    .final-button{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+    #sale-price{
+        font-size: 13px;
+        text-decoration: line-through red
+    }
+    #name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img{
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        a{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            #size-color{
+                font-size: 12px;
+                color: rgb(85, 85, 85);
+            }
+        }
+    }
+        //profile_menu
+    .profile_menu{
+        width: 30%;
+        height: 1000px;
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    } 
+    .profile_menu-detail{
+        width: 90%;
+        height: 300px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .profile_intro{
+        width: 90%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .profile_intro span{
+        width:100%;
+        font-size: 25px;
+        text-align: center;
+    }
+    #profile_intro-name{
+        font-weight: bold;
+    }
+    .profile_menu-item{
+        border-radius: 5px;
+        height: 50px;
+        width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile_menu-item:hover{
+        background-color: black;
+        color: wheat;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .profile_menu-item span{
+        font-size: 20px;
+        
+    }
+    //end profile_menu
+    .profile_info{
+        width: 50%;
+        height: 100%;
+        padding-bottom: 20px;
+        background-color:antiquewhite;
+        margin-top: 100px;
+        border-radius: 5px ;
+    }
+    .profile_info-name{
+        width: 100%;
+        font-size: 40px;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .profile_info-name span{
+        border-bottom: 4px solid black;
+    }
+    .profile_info-detail{
+        width: 100%;
+        background-color: antiquewhite;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile_info-detail .form-group{
+        margin-left: 20px;
+        align-self: flex-start;
+        width: 92%;
+    }
+
+
+    .genderBox{
+        display: flex;
+        justify-content: space-evenly;
+        width: 85%;
+
+    }
+    #gender_male, #gender_female{
+        width: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+    .form-check-input{
+        width: 30px;
+        height: 30px;
+        background-color: #da690d;
+    }
+
+    .genderBox span{
+        
+        font-weight: 100;
+        margin-top: -10px;
+    }
+    .profileUpdateNotice{
+        width: 90%;
+        height: 40px;
+        border-radius: 50px;
+        color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid orange;
+    }
+    //////
+    ////proStatus:
+    .userStatus{
+        margin-top: 100px;
+        width: 60%;
+        height: 100%;
+        padding: 30px;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        .address-profile{
+            width: 100%;
+            margin-top: 30px;
+            td{
+                padding: 10px !important;
+            }
+        }
+
+        .price-infor{
+            .temp-price, .sale-price, .delivery-price, .total-price{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .total-price{
+                font-size: 18px;
+            }
+        }
+    }
+    .userStatus-name{
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .userStatus-name span{
+        font-size: 30px;
+        font-weight: bold;
+        border-bottom: 4px solid black;
+    }
+    .table-borderless{
+        width: 90%;
+        td{
+            vertical-align: middle;
+        }
+    }
+    .proStatus-detail{
+        cursor: pointer;
+    }
+    .proStatus-detail:hover{
+        background-color: rgba(112, 107, 98, 0.5);
+    }
+    //focus-item
+    .focus-item{
+        background-color: rgb(12, 12, 11);
+        font-weight: bold;
+        color:white;
+    }
+    #return-proStatus{
+        margin-left: 5px;
+    }
+
+    .changePass{
+        width: 40%;
+        height: 100%;
+        margin-top: 100px;
+        background-color: white;
+       font-size: 20px;
+       font-weight: bold;
+       border-radius: 5px;
+    }
+    .changePass-detail{
+        width: 90%;
+        margin-top: 50px;
+        margin-left: 20px;
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+    .changePass-detail .form-group{
+        align-self: flex-start;
+        width: 100%;
+    }
+    .changePassSubmit{
+        width: 100%;
+        height: 40px;
+        background-color: orange;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        color: white;
+    }
+    .changePassSubmit:hover{
+        outline: none;
+        border: none;
+        background-color: #da690d;
+    }
+    .profileSubmit{
+        width: 90%;
+        height: 40px;
+        background-color: orange;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profileSubmit:hover{
+        outline: none;
+        border: none;
+        background-color: #da690d;
+    }
+    #changeError{
+        width: 30%;
+        height: 20%;
+        background-color: #da690d;
+    }
+
+    .forList{
+        border: 2px solid #0f0e0d;
+    }
+    .countName{
+        background-color: black;
+        color: white;
+
+    }
+    
+    .Address-optionList{
+        width: 136px;
+        height: 45px;
+        background-color: black;
+        border-radius: 5px;
+        margin-left: 118px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        margin: 10px 0px 10px 0px;
+    }
+    .Address-optionList i{
+      width: 10%;
+    }
+    .icon-trash{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        .addressUpdate{
+            width: 30px;
+            margin-left: 40px;
+        }
+    }
+    
+}
+
+.rating-modal{
+    .LYAF-rating-container{
+        #rating{
+            span{
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css" integrity="sha512-+VDbDxc9zesADd49pfvz7CgsOl2xREI/7gnzcdyA9XjuTxLXrdpuz21VVIqc5HPfZji2CypSbxx1lgD7BgBK5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="LYAF-dashboard-header">
+    <span class="text-uppercase font-weight-bold">ADD PRODUCT</span>
+</div>
+<div class="LYAF-dashboard-content">
+    <div class="row">
+        <div class="LYAF-dashboard-block col">
+            <div class="LYAF-block-title">
+                <span class="font-weight-bold" style="letter-spacing: 0.04em">Product property</span>
+                <i class="fas fa-info-circle required-info">
+                </i>
+                    <span class="LYAF-tooltip font-weight-bold" style="letter-spacing: 0.04em">This information is required</span>
+                <hr>
+            </div>
+            <div class="LYAF-block-content">
+                <div class="LYAF-product-name">
+                    <span class=" font-weight-bold">Product name :</span>
+                    <input type="text" placeholder="Type your product name here">
+                    <div class="description">
+                        <b>Drag</b> products up or down for seriated uploading.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="LYAF-product-category col">
+                        <label for="basic-url" class="font-weight-bold">Category</label>
+                        <div class="input-group mb-3">
+                            <select name="simple" class="LYAF-selecter category-selecter" data-placeholder="Select your product category ...">
+                            </select>
+                        </div>
+                        <div class="description">
+                            <b>Drag</b> products up or down for seriated uploading.
+                        </div>
+                    </div>
+                    <div class="LYAF-product-price col">
+                        <label for="basic-url" class="font-weight-bold">Product price</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text font-weight-bold">VND</span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Price" aria-label="Price">
+                        </div>
+                        <div class="description">
+                            <b>Drag</b> products up or down for seriated uploading.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="LYAF-dashboard-block col">
+            <div class="LYAF-block-title">
+                <span class="font-weight-bold" style="letter-spacing: 0.04em">Product description</span>
+                <i class="fas fa-info-circle required-info">
+                </i>
+                    <span class="LYAF-tooltip font-weight-bold" style="letter-spacing: 0.04em">This information is required</span>
+                <hr>
+            </div>
+            <div class="LYAF-block-content">
+                <div class="LYAF-product-description">
+                    <span class=" font-weight-bold">Product description :</span>
+                    <textarea id="desc">
+                    </textarea>
+                </div>
+                <div class="description">
+                    <b>Drag</b> products up or down for seriated uploading.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="LYAF-dashboard-block col">
+            <div class="LYAF-block-title">
+                <span class="font-weight-bold" style="letter-spacing: 0.04em">Images supplement</span>
+                <i class="fas fa-info-circle required-info">
+                </i>
+                    <span class="LYAF-tooltip font-weight-bold" style="letter-spacing: 0.04em">This information is required</span>
+                <hr>
+            </div>
+            <div class="LYAF-block-content">
+                <div class="LYAF-product-image ">
+                    <div class="LYAF-preview-wrapper">
+                        <div class="LYAF-preview-container">
+                            <div class="list-title">
+                                <div class="title-info">
+                                    <span class="font-weight-bold title" style="letter-spacing: 0.04em">Product images</span>
+                                    <span class="font-weight-bold info" style="letter-spacing: 0.04em">0 images</span>
+                                </div>
+                                <div class="add-image font-weight-bold" style="letter-spacing: 0.04em">
+                                    <i class="fas fa-plus"></i> 
+                                    <span>More</span>
+                                    <input type="file" id="files" name="files" title="" class="image-upload" accept="image/*" multiple>
+                                </div>
+                            </div>
+                            <div class="LYAF-preview-list">
+                            </div>
+                            <div class="description">
+                                <b>Drag</b> products up or down for seriated uploading.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="LYAF-dashboard-block col">
+            <div class="LYAF-block-title">
+                <span class="font-weight-bold" style="letter-spacing: 0.04em">Sub Products</span>
+                <i class="fas fa-info-circle required-info">
+                </i>
+                    <span class="LYAF-tooltip font-weight-bold" style="letter-spacing: 0.04em">This information is required</span>
+                <hr>
+            </div>
+            <div class="LYAF-block-content">
+                <div class="LYAF-sub-products-add">
+                    <div class="title-info">
+                        <span class="font-weight-bold title" style="letter-spacing: 0.04em">Sub product list</span>
+                        <span class="font-weight-bold info" style="letter-spacing: 0.04em">0 products</span>
+                    </div>
+                    <div class="add-sub-product font-weight-bold" style="letter-spacing: 0.04em">
+                        <i class="fas fa-plus"></i> 
+                        <span>More</span>
+                    </div>
+                </div>
+                <div class="LYAF-sub-products-list">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success LYAF-save-new">Save</button>
+</div>
+
+<div class="modal add-sub-modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Thêm sản phẩm con</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <label for="basic-url" class="font-weight-bold">Color</label>
+            <div class="input-group mb-3">
+                <select name="simple" class="LYAF-selecter color-selecter" data-placeholder="Select your product color ...">
+                </select>
+            </div>
+
+            <label for="basic-url" class="font-weight-bold">Size</label>
+            <div class="input-group mb-3">
+                <select name="simple" class="LYAF-selecter size-selecter" data-placeholder="Select your product size ...">
+                </select>
+            </div>
+
+            <label for="basic-url" class="font-weight-bold">Quantity</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary save">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="/js/module/dashboard/AddProduct.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js" integrity="sha512-ooSWpxJsiXe6t4+PPjCgYmVfr1NS5QXJACcR/FPpsdm6kqG1FmQ2SVyg2RXeVuCRBLr0lWHnWJP6Zs1Efvxzww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

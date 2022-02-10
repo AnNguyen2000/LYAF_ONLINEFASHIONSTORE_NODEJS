@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="/css/productCollection.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.css" integrity="sha512-MKxcSu/LDtbIYHBNAWUQwfB3iVoG9xeMCm32QV5hZ/9lFaQZJVaXfz9aFa0IZExWzCpm7OWvp9zq9gVip/nLMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div id="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Danh mục</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Áo thun</li>
+        </ol>
+    </nav>
+</div>
+<div class="LYAF-collection-wrapper">
+    <div class="LYAF-collection-filter">
+        <section>
+            <!-- Section: Filters -->
+            <section id="filters" data-auto-filter="true">
+                <h4>Filters</h4>
+                <hr>
+                <!-- Section: Condition -->
+                <section class="mb-4" data-filter="search">
+                    <h6 class="font-weight-bold mb-3">Tìm tên</h6>
+                    <div class="form-check mb-3">
+                        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Keyword..." value="{{option.keyword}}">
+                    </div>
+                </section>
+
+                <!-- Section: Condition -->
+                <section class="mb-4" data-filter="condition">
+                    <h6 class="font-weight-bold mb-3">Điều kiện</h6>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="new" name="condition" {{#equals val1=option.isNew val2='true'}}checked{{/equals}} id="condition-checkbox">
+                        <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox">
+                        Sản phẩm mới
+                        </label>
+                    </div>
+
+                    <div class="form-check mb-  ">
+                        <input class="form-check-input" type="checkbox" value="sale" name="condition" {{#equals val1=option.isSale val2='true'}}checked{{/equals}} id="condition-checkbox2">
+                        <label class="form-check-label text-uppercase small text-muted" for="condition-checkbox2">
+                        Khuyến mãi
+                        </label>
+                    </div>
+                </section>
+                <!-- Section: Condition -->
+
+                <!-- Section: Avg. Customer Review -->
+                <section class="mb-4">
+                <h6 class="font-weight-bold mb-3">Rating trung bình</h6>
+                    <label for="rating-all">Tất cả</label>
+                    <input name="rating" id="rating-all" value="all" {{#equals val1=option.ratingAll val2='true'}}checked{{/equals}} type='checkbox'>
+                    <div class="" id="rating">
+                        <span class="star-1" data-id="1"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="1"></i></span>
+                        <span class="star-2" data-id="2"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="2"></i></span>
+                        <span class="star-3" data-id="3"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="3"></i></span>
+                        <span class="star-4" data-id="4"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="4"></i></span>
+                        <span class="star-5" data-id="5"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="5"></i></span>
+                    </div>
+                </section>
+                <!-- Section: Avg. Customer Review -->
+
+                <!-- Section: Price -->
+                <section class="mb-4">
+                    <h6 class="font-weight-bold mb-3">Giá</h6>
+
+                    <div class="price-selecter">
+                        
+                    </div>
+                    <input type="hidden" id="price-from" value="{{option.priceFrom}}">
+                    <input type="hidden" id="price-to" value="{{option.priceTo}}">
+                </section>
+            </section>
+            <!-- Section: Filters -->
+        </section>
+                <hr>
+        <button type="button" class="btn btn-primary collection-search">Tìm kiếm</button>
+    </div>
+    <div class="LYAF-collection-products-wrapper">
+        <div class="LYAF-collection-product-sort">
+            <div class="LYAF-sort-section">
+                <label for="LYAF-form-sort">Sắp xếp</label>
+                <select name="sort" id="LYAF-form-sort">
+                    <option value="any" {{#equals val1=option.sort val2='price-desc'}}selected{{/equals}}>Tất cả</option>
+                    <option value="price-desc" {{#equals val1=option.sort val2='price-desc'}}selected{{/equals}}>Giá từ cao đến thấp</option>
+                    <option value="price-asc" {{#equals val1=option.sort val2='price-asc'}}selected{{/equals}}>Giá từ thấp đến cao</option>
+                    <option value="rating-desc" {{#equals val1=option.sort val2='rating-desc'}}selected{{/equals}}>Đánh giá từ cao đến thấp</option>
+                    <option value="rating-asc" {{#equals val1=option.sort val2='rating-asc'}}selected{{/equals}}>Đánh giá từ thấp đến cao</option>
+                </select>
+            </div>
+            <div class="LYAF-sort-section">
+                <label for="LYAF-form-sort">Danh mục</label>
+                <select name="category" id="LYAF-form-sort">
+                    <option {{#equals val1=../option.category val2='any'}}selected{{/equals}} value="any">Tất cả</option>
+                    {{#each categories}}
+                        <option {{#equals val1=../option.category val2=this._id}}selected{{/equals}} value="{{this._id}}">{{this.name}}</option>
+                    {{/each }}
+                </select>
+            </div>
+        </div>
+        <div class="LYAF-products-container">
+            {{#if data.length}}
+                {{#each data}}
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            {{#getThumbnails images=this.images id=this._id}}
+                            {{/getThumbnails}}
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price">
+                            {{#if this.isSale}}
+                                <span id="true-price">{{#saleFormat price=this.price sale=this.sale}} {{/saleFormat}}<span id="currency">đ</span></span>
+                                <span id="sale-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                            {{else}}
+                                <span id="true-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                            {{/if}}
+                            </div>
+                            <div id="name"><a href="/product/detail/{{this._id}}">{{this.name}}</a></div>
+                            <div id="category">
+                            {{#if this.categoryId.parentId}}
+                                <a href="#" id="parent">{{this.categoryId.parentId.name}}</a>, 
+                            {{/if}}
+                                <a href="#" id="child">{{this.categoryId.name}}</a>
+                            </div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    {{#ratingStar value=this.rating}}
+                                    {{/ratingStar}}
+                                </div>
+                                <div class="rating-value">
+                                    {{this.rating}}/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="no-data">
+                    <img src="/img/logo.jpg" width="100" height="100">
+                    <p>Sản phẩm bạn tìm không có ...</p>
+                </div>
+            {{/if}}
+        </div>
+        <div class="LYAF-product-pagination">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="/product/collection?{{search}}&page={{#operator val1=page op="-" val2=1}}{{/operator}}">Previous</a></li>
+                    {{#each pageRange}}
+                        <li class="page-item {{#numberEquals val1=../page val2=this}}active{{/numberEquals}}">
+                            <a class="page-link" href="/product/collection?{{../search}}&page={{this}}">{{this}}</a>
+                        </li>
+                    {{/each}}
+                <li class="page-item"><a class="page-link" href="/product/collection?{{search}}&page={{#operator val1=page op="+" val2=1}}{{/operator}}">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js" integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js" integrity="sha512-ZKqmaRVpwWCw7S7mEjC89jDdWRD/oMS0mlfH96mO0u3wrPYoN+lXmqvyptH4P9mY6zkoPTSy5U2SwKVXRY5tYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/collection.js"></script>

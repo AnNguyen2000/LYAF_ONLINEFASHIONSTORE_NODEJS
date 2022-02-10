@@ -1,0 +1,188 @@
+<link rel="stylesheet" href="/css/proManager.css">
+<link rel="stylesheet" href="/css/ShipperProfile.css">
+<div class="LYAF-dashboard-main">
+    {{!-- Dashboard navbar --}}
+<div class="LYAF-side-bar">
+    <div class="LYAF-side-bar-header">
+        <span class="LYAF-side-bar-title text-uppercase font-weight-bold">Dasboard</span>
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="LYAF-side-bar-menu">
+        {{!-- <div class="LYAF-profit-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <span class="title">Revenue</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-admin-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-shield icon"></i>
+                <span class="title">Cá nhân</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option LYAF-option-active">
+                    <a href="/manager/me">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Các đơn đã nhận</span>
+                    </a>
+                </div>
+                {{!-- <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div> --}}
+            </div>
+        </div>
+        <div class="LYAF-user-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-users icon"></i>
+                <span class="title">Tài khoản</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/account">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Quản lý tài khoản</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="LYAF-staff-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-check icon"></i>
+                <span class="title">Staff</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-receipt icon"></i>
+                <span class="title">Đơn hàng</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/ship">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần giao</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/manage">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần xử lý</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fab fa-product-hunt icon"></i>
+                <span class="title">Sản phẩm</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/list">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Danh sách sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/add">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thêm sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/property">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thuộc tính</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{!-- End Dashboard navbar --}}
+    {{!-- Dashboard body --}}
+    <div class="LYAF-dasboard-body">
+        <div class="LYAF-dashboard-header">
+            <span class="text-uppercase font-weight-bold">Danh sách đơn xác nhận của nhân viên {{user.name}}</span>
+        </div>
+        <div class="LYAF-dashboard-content">
+            <div class="aa-profile">
+                <div class="aa-name">
+                    {{data.name}}
+                </div>
+            </div>
+            <div class="aa-bill-list">
+                <table id="aa-list" class="table-striped dt-responsive nowrap"   style="width:100%">
+
+                </table>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+    
+    <!-- Modal -->
+    <div class="modal fade property-confirm-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger confirm" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-primary">Huỷ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script  type="module" src="/js/productManager.js"></script>
+<script src="https://cdn.tiny.cloud/1/ycp1l3m6y4usaxn582ylh8wk67s6ze43ttkwlrbrd180idz6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.css" integrity="sha512-gGkweS4I+MDqo1tLZtHl3Nu3PGY7TU8ldedRnu60fY6etWjQ/twRHRG2J92oDj7GDU2XvX8k6G5mbp0yCoyXCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/dom-autoscroller@2.2.3/dist/dom-autoscroller.js"></script>
+<script type="module" src="/js/module/dashboard/ShipperProfile.js"></script>

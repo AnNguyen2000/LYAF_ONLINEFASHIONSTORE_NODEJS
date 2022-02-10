@@ -1,0 +1,100 @@
+
+// .LYAF-collection-container{
+//     display: flex;
+//     flex-direction: column;
+//     .LYAF-collection-header{
+//         display: flex;
+//         flex-direction: column;
+//         #title{
+//             text-align: center;
+//             font-weight: 600;
+//         }
+//     }
+
+//     .LYAF-collection-filter{
+//         padding: 10px;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//     }
+
+//     .LYAF-collection-wrapper{
+//         padding: 10px;
+//         display: flex;
+//         flex-direction: row;
+//         flex-wrap: wrap;
+//         gap: 10px;
+//         @import './_productComponent';
+//     }
+    
+//     .LYAF-collection-pagination{
+//         padding: 10px;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//     }
+// }
+.LYAF-collection-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    .LYAF-collection-filter{
+        width: 20%;
+        .price-selecter{
+            width: 80%;
+            margin-top: 50px;
+        }
+    }
+    .LYAF-collection-products-wrapper{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .LYAF-products-container{
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            @import './_productComponent';
+        }
+        
+        .LYAF-collection-product-sort{
+            width: 100%;
+            display: flex;
+            .LYAF-sort-section{
+            position: relative;
+                select{
+                    padding: 5px;
+                    outline: none;
+                    border-radius: 5px;
+                    border: 2px solid black;
+                }
+                
+                label{
+                    font-weight: 600;
+                    position: absolute;
+                    font-size: 12px;
+                    top: -10px;
+                    left: 15px;
+                    background-color: white;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+    .no-data{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        p{
+            font-weight: 600;
+            font-size: 24px;
+        }
+    }
+}

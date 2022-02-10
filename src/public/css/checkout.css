@@ -1,0 +1,162 @@
+.LYAF-checkout-container .right-side {
+  background-color: #FAFAFA;
+  border-left: 2px solid #e6e6e6;
+  border-right: 2px solid #e6e6e6;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px; }
+  .LYAF-checkout-container .right-side .LYAF-list-product {
+    width: 100%; }
+    .LYAF-checkout-container .right-side .LYAF-list-product td {
+      vertical-align: middle; }
+    .LYAF-checkout-container .right-side .LYAF-list-product #quantity {
+      text-align: center; }
+    .LYAF-checkout-container .right-side .LYAF-list-product .product-property {
+      display: flex;
+      flex-direction: row;
+      height: fit-content;
+      align-items: center; }
+      .LYAF-checkout-container .right-side .LYAF-list-product .product-property img {
+        border-radius: 10px; }
+      .LYAF-checkout-container .right-side .LYAF-list-product .product-property #thumbnail {
+        margin-right: 10px; }
+      .LYAF-checkout-container .right-side .LYAF-list-product .product-property #property {
+        font-size: 13px; }
+      .LYAF-checkout-container .right-side .LYAF-list-product .product-property #infor {
+        display: flex;
+        flex-direction: column; }
+  .LYAF-checkout-container .right-side #sale-price {
+    font-size: 13px;
+    text-decoration: line-through red; }
+  .LYAF-checkout-container .right-side .temp-price,
+  .LYAF-checkout-container .right-side .sale-price,
+  .LYAF-checkout-container .right-side .delivery-price,
+  .LYAF-checkout-container .right-side .totle-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .LYAF-checkout-container .right-side .totle-price {
+    font-size: 18px; }
+
+.LYAF-checkout-container .left-side .checkout-form {
+  display: block;
+  width: 100%; }
+
+.LYAF-checkout-container .left-side .profile-helper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.LYAF-checkout-container .left-side .delivery-form {
+  display: block;
+  height: fit-content;
+  width: 100%; }
+
+.LYAF-checkout-container .left-side .payment-selection {
+  /* When the radio button is checked, add a blue background */ }
+  .LYAF-checkout-container .left-side .payment-selection .payment-option {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px; }
+    .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor {
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      /* Hide the browser's default radio button */
+      /* Create a custom radio button */
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      /* Show the indicator (dot/circle) when checked */
+      /* Style the indicator (dot/circle) */ }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor .checkmark {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        margin-left: 10px;
+        background-color: #c7c7c7;
+        border-radius: 50%;
+        margin-right: 10px; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor .infor {
+        font-size: 16px;
+        margin-left: 10px; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor input:checked ~ .checkmark:after {
+        display: block; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor img {
+        margin-left: 50px; }
+      .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-infor .payment-desc {
+        padding: 20px;
+        width: 100%;
+        background-color: #ccc; }
+    .LYAF-checkout-container .left-side .payment-selection .payment-option .payment-desc {
+      display: none;
+      border-top: 1px solid #ccc;
+      border-radius: 0  0 10px 10px;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      background-color: #e4e4e4; }
+  .LYAF-checkout-container .left-side .payment-selection .payment-option:hover input ~ .checkmark {
+    background-color: #ccc; }
+  .LYAF-checkout-container .left-side .payment-selection .payment-option input:checked ~ .checkmark {
+    background-color: #2196F3; }
+
+.LYAF-checkout-container .left-side .bottom-button {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .LYAF-checkout-container .left-side .bottom-button button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px; }
+
+.select-profile-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.select-profile-modal .showProfileHere {
+  width: 100%; }
+
+.select-profile-modal .forShowAddress {
+  margin-bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid black; }
+  .select-profile-modal .forShowAddress td {
+    padding: 10px; }
+  .select-profile-modal .forShowAddress #header {
+    color: white;
+    height: 30px;
+    background-color: black; }
+    .select-profile-modal .forShowAddress #header #tempborder {
+      background-color: black; }
+
+.select-profile-modal .forShowAddress:hover {
+  border: 2px solid #00336d; }
+  .select-profile-modal .forShowAddress:hover #header {
+    background-color: #00336d; }
+    .select-profile-modal .forShowAddress:hover #header #tempborder {
+      background-color: #00336d; }

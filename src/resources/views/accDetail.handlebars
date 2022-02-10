@@ -1,0 +1,46 @@
+<div id="accDetailBody">
+    <div id="accDetailTitle">
+        <span>ACCOUNT DETAIL</span>
+    </div>
+    <div id="accDetailForm">
+    <div class="form-group">
+        <label for="username">Tài khoản:</label>
+        <input type="text" class="form-control" id="acc-username" value="{{data._id}}">
+    </div>
+    <div class="form-group">
+        <label for="name">Tên:</label>
+        <input type="text" class="form-control" id="acc-name"value="{{data.name}}">
+    </div>
+    <div class="form-group">
+        <label for="role">Chức vụ:</label>
+        <select class="form-control" id="filterlist">
+            <option value="admin" {{#equals val1=data.role val2 ="admin"}}selected{{/equals}}>Admin</option>
+            <option value="NVVC" {{#equals val1=data.role val2 ="NVVC"}}selected{{/equals}}>Nhân viên vận chuyển</option>
+            <option value="NVDH" {{#equals val1=data.role val2 ="NVDH"}}selected{{/equals}}>Nhân viên đơn hàng</option>
+            <option value="NVSP" {{#equals val1=data.role val2 ="NVSP"}}selected{{/equals}}>Nhân viên sản phẩm</option>
+            <option value="user" {{#equals val1=data.role val2 ="user"}}selected{{/equals}}>Người dùng</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="phone">Số điện thoại:</label>
+         
+        <input type="text" class="form-control" id="acc-phone" value="{{data.phoneNumber}}">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="acc-email" value="{{data.email}}">
+    </div>
+    <div class="btnGroup">
+        <div class="btnGroup-left">
+             <button type="submit" class="btn btn-success" id="accDetailUpdate">Cập nhật</button>
+            <button type="submit" class="btn btn-danger" id="accDetailDelete">Xóa</button>
+        </div>
+        <div class="btnGroup-right">
+             <button type="submit" class="btn btn-secondary" id="accDetailCancel">Quay lại</button>
+        </div>
+        
+    </div>
+   
+    </div>
+</div>
+<script type="module" src="/js/module/dashboard/Account.js"></script>

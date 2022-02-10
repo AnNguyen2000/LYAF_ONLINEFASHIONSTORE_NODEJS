@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="/css/checkout.css">
+<div id="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Giỏ hàng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+        </ol>
+    </nav>
+</div>
+<div class="container LYAF-checkout-container">
+    <div class="row">
+        <div class="col-xs-1-12 col-md-6 left-side">
+            <h3 class="font-weight-bold text-uppercase">Thanh toán</h3>
+            <hr>
+            <form class="checkout-form">
+                <div class="profile-helper">
+                    <h5>Thông tin giao hàng</h5>
+                    <button type="button" class="btn btn-primary pick-a-profile">Chọn hồ sơ</button>
+                </div>
+                <div class="delivery-form">
+                    <div class="form-group">
+                        <label for="name">Họ và tên</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" placeholder="Nguyễn Văn A">
+                        {{!-- <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="090xxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Số nhà / Đường / Khu phố">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="province">Tỉnh / Thành</label>
+                            <select class="custom-select mr-sm-2" name="province" id="province">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="district">Quận / Huyện</label>
+                            <select class="custom-select mr-sm-2" name="district" id="district">
+                                <option selected>Choose...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="ward">Phường / Xã</label>
+                            <select class="custom-select mr-sm-2" name="ward" id="ward">
+                                <option selected>Choose...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <h5>Phương thức thanh toán</h5>
+                <div class="payment-selection">
+                    <label class="payment-option" for="COD-option">
+                        <div class="payment-infor">
+                            <input type="radio" class="radio-selection" id="COD-option" value="COD" name="payment" required>
+                            <span class="checkmark"></span>
+                            <img src="/img/COD-payment.jpg" height="50" width="50">
+                            <span class="infor">Thanh toán khi giao hàng (COD) </span>
+                        </div>
+                        <div class="payment-desc">
+                            Bạn sẽ nhận được cuộc gọi khi hàng giao tới
+                        </div>
+                    </label>
+                    {{!-- <label class="payment-option" for="MOMO-option">
+                        <div class="payment-infor">
+                            <input type="radio" class="radio-selection" id="MOMO-option" value="MOMO" name="payment" required>
+                            <span class="checkmark"></span>
+                            <img src="/img/MOMO-payment.jpg" height="50" width="50">
+                            <span class="infor">Thanh toán bằng MOMO (Momo) </span>
+                        </div>
+                        <div class="payment-desc">
+                        </div>
+                    </label> --}}
+                </div>
+                <div class="bottom-button">
+                    <button class="btn btn-light font-weight-bold text-uppercase">GIỎ HÀNG</button>
+                    <button class="btn btn-info font-weight-bold text-uppercase go-checkout">THANH TOÁN ĐƠN HÀNG</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-1-12 col-md-6 right-side">  
+            <table class="table LYAF-list-product">
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Tổng giá</th>
+                </tr>
+                {{#each cart}}
+                    <tr class="LYAF-product">
+                        <td class="product-property">
+                            <img id="thumbnail" src="{{this.thumbnail}}" height="70" width="70">
+                            <div id="infor">
+                                <span id="name" class="font-weight-bold">{{this.name}}</span>
+                                <span id="property" class="text-uppercase">{{this.subProdId}}-{{this.color.name}}-{{this.size.name}}</span>
+                            </div>
+                        </td>
+                        <td id="quantity">{{this.quantity}}</td>
+                        <td id="unit">
+                            {{#if this.isSale}}
+                                <span>{{#saleFormat price=this.price sale=this.sale}}{{/saleFormat}}<u>đ</u></span>
+                                <span id="sale-price">{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                            {{else}}
+                                <span>{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                            {{/if}}
+                        </td>
+                        <td id="price">{{#priceFormat price=this.totalPrice}}{{/priceFormat}}<u>đ</u></td>
+                    </tr>
+                {{/each}}
+            </table>
+            <hr>
+            <div class="temp-price">
+                <span id="title">Tạm tính</span>
+                <span id="number">{{#priceFormat price=tempPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <div class="sale-price">
+                <span id="title">Đã giảm</span>
+                <span id="number">{{#priceFormat price=salePrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <div class="delivery-price">
+                <span id="title">Phí vận chuyển</span>
+                <span id="number">{{#priceFormat price=deliveryPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <hr>
+            <div class="totle-price text-uppercase font-weight-bold">
+                <span id="title">Tổng tiền</span>
+                <span id="number">{{#priceFormat price=totalPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade select-profile-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chọn hồ sơ giao hàng</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="showProfileHere">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+<script  type="module" src="/js/checkout.js"></script>

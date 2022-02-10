@@ -1,0 +1,324 @@
+<link rel="stylesheet" href="/css/proManager.css">
+<div class="LYAF-dashboard-main">
+    {{!-- Dashboard navbar --}}
+<div class="LYAF-side-bar">
+    <div class="LYAF-side-bar-header">
+        <span class="LYAF-side-bar-title text-uppercase font-weight-bold">Dasboard</span>
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="LYAF-side-bar-menu">
+        {{!-- <div class="LYAF-profit-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <span class="title">Revenue</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-admin-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-shield icon"></i>
+                <span class="title">Cá nhân</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/me">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Các đơn đã nhận</span>
+                    </a>
+                </div>
+                {{!-- <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div> --}}
+            </div>
+        </div>
+        <div class="LYAF-user-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-users icon"></i>
+                <span class="title">Tài khoản</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/account">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Quản lý tài khoản</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="LYAF-staff-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-check icon"></i>
+                <span class="title">Staff</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-receipt icon"></i>
+                <span class="title">Đơn hàng</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/ship">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần giao</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/manage">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần xử lý</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fab fa-product-hunt icon"></i>
+                <span class="title">Sản phẩm</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/list">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Danh sách sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/add">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thêm sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option LYAF-option-active">
+                    <a href="/manager/property">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thuộc tính</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{!-- End Dashboard navbar --}}
+    {{!-- Dashboard body --}}
+    <div class="LYAF-dasboard-body">
+        <div class="LYAF-dashboard-header">
+            <span class="text-uppercase font-weight-bold">PROPERTY</span>
+        </div>
+        <div class="property-body">
+            <div class="property-area">
+                <div class="add-size">
+                    <div class="propery-title">
+                        ADD SIZE
+                    </div>
+                    <div class="property-detail-size">
+                        <input type="text" class="add-size-input" id="add-size-input-id" name="add-size-input-id" placeholder="Enter Size ID" value="">
+                        <input type="text" class="add-size-input" id="add-size-input-name" name="add-size-input-name" placeholder="Enter Size Name" value="">
+                        <input type="text" class="add-size-input" id="add-size-input-description" name="add-size-input-description" placeholder="Enter Size Description" value="">
+                        <button type="submit" id="add-size-btn" class="mainbtn">Add Size</button>
+                        <button type="submit" id="delete-size-btn" class="subbtn">Delete</button>
+                        <button type="submit" id="update-size-btn" class="subbtn">Update</button>
+                        <button type="submit" id="cancel-size-btn" class="subbtn">Cancel</button>
+                    </div>
+                </div>
+                <div class="property-list">
+                    <div class="property-list-size">
+                        <div class="list-size-title">
+                            <span>Size List</span>
+                        </div>
+                        <div class="table-size">
+                            <table class="table-scroll small-first-col">
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="body-half-screen-size">
+                                    {{#each sizeList}}
+                                        <tr id="{{this._id}}" data-id="{{this._id}}" data-desc="{{this.desc}}">
+                                            <td>{{this._id}}</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.desc}}</td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                                </table>
+                        </div>
+                    </div>
+                
+                    
+                </div>
+            </div>
+            <div class="property-area">
+                
+                <div class="add-color">
+                    <div class="propery-title-color">
+                        ADD COLOR
+                    </div>
+                    <div class="property-detail-color">
+                        <input type="text" class="add-color-item" id="add-colorid-input" name="add-colorcode-input" placeholder="Enter Color ID">
+                        <input type="text" class="add-color-item" id="add-colorname-input" name="add-colorcode-input" placeholder="Enter Color Name">
+                        <div class="add-color-item" id="add-color-img">
+                            <div class="drag-area">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <header>Drag & Drop A Image Here</header>
+                            <span>OR</span>
+                            <button>Upload Image</button>
+                            <input id="inputfile" type="file" hidden>
+                        </div>
+                        </div>
+                        <button type="submit" id="add-color-btn">Add Color</button>
+                        <button type="submit" id="delete-color-btn" class="subbtn">Delete</button>
+                        <button type="submit" id="update-color-btn" class="subbtn">Update</button>
+                        <button type="submit" id="cancel-color-btn" class="subbtn">Cancel</button>
+                    </div>
+                </div>
+                <div class="property-list">
+                    <div class="property-list-color">
+                        <div class="list-color-title">
+                        <span>Color List</span>
+                        </div>
+                        <div class="table-color">
+                            <table class="table-scroll small-first-col">
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="body-half-screen-color" id="colorTable">
+                                    {{#each colorList}}
+                                        <tr id="{{this._id}}" data-id="{{this._id}}" data-name="{{this.name}}" data-thumb="{{this.thumbnail}}">
+                                            <td>{{this._id}}</td>
+                                            <td>{{this.name}}</td>
+                                            <td>
+                                                <img src="{{this.thumbnail}}" alt="" id="thumbnail-color">
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                                </table>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="property-area">
+                <div class="add-category">
+                    <div class="propery-title-category">
+                        ADD CATEGORY
+                    </div>
+                    <div class="property-detail-category">
+                        <input type="text" class="add-size-input" id="add-category-input-id" name="add-category-input-id" placeholder="Enter Category ID" value="">
+                        <input type="text" class="add-size-input" id="add-category-input-name" name="add-category-input-name" placeholder="Enter Category Name" value="">
+                        <select name="add-category-input-parent"  class="add-size-input" id="add-category-input-parent">
+
+                        </select>
+                        <button type="submit" id="add-category-btn">Add Size</button>
+                        <button type="submit" id="delete-category-btn" >Delete</button>
+                        <button type="submit" id="update-category-btn" >Update</button>
+                        <button type="submit" id="cancel-category-btn" >Cancel</button>
+                    </div>
+                </div>
+                <div class="property-list">
+                    <div class="property-list-category">
+                        <div class="list-category-title">
+                            <span>Category List</span>
+                        </div>
+                          <div class="table-size">
+                            <table class="table-scroll small-first-col">
+                                <thead>
+                                    <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>ParentID</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="body-half-screen-cat" id="catTable">
+                                    {{#each catList}}
+                                        <tr id="{{this._id}}" data-id="{{this._id}}" data-name="{{this.name}}" data-parentId="{{this.parentId.name}}">
+                                            <td>{{this._id}}</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.parentId.name}}</td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+    
+    <!-- Modal -->
+    <div class="modal fade property-confirm-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger confirm" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-primary">Huỷ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script  type="module" src="/js/productManager.js"></script>
+<script src="https://cdn.tiny.cloud/1/ycp1l3m6y4usaxn582ylh8wk67s6ze43ttkwlrbrd180idz6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.css" integrity="sha512-gGkweS4I+MDqo1tLZtHl3Nu3PGY7TU8ldedRnu60fY6etWjQ/twRHRG2J92oDj7GDU2XvX8k6G5mbp0yCoyXCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/dom-autoscroller@2.2.3/dist/dom-autoscroller.js"></script>
+<script type="module" src="/js/module/dashboard/ProductList.js"></script>
+<script type="module" src="/js/module/dashboard/Property.js"></script>

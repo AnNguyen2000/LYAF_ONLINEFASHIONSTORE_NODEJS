@@ -1,0 +1,79 @@
+.LYAF-dasboard-body .LYAF-sub-products-list .quantity .edit-btn {
+  color: #006eff; }
+
+.LYAF-dasboard-body .LYAF-sub-products-list .quantity .edit-btn:hover {
+  color: #004db3; }
+
+.LYAF-dasboard-body #edit-btn {
+  color: #006eff;
+  margin-left: 10px; }
+
+.LYAF-dasboard-body #edit-btn:hover {
+  color: #004db3; }
+
+.LYAF-dasboard-body #desc {
+  padding: 10px;
+  border: 2px dashed #b8b8b8;
+  outline-width: 2px;
+  outline-color: #b8b8b8;
+  margin-bottom: 10px; }
+
+.images-edit-modal .LYAF-preview-wrapper {
+  width: 100%; }
+  .images-edit-modal .LYAF-preview-wrapper .list-title .add-image {
+    position: relative;
+    font-size: 11px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: fit-content;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    transition: 0.3s;
+    cursor: pointer; }
+  .images-edit-modal .LYAF-preview-wrapper .image-upload {
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer; }
+  .images-edit-modal .LYAF-preview-wrapper .image-info {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.remove-product-confirm .confirm-code-input {
+  margin-top: 20px; }
+
+.remove-product-confirm #warning {
+  padding: 10px;
+  border: 2px dashed red;
+  border-radius: 10px;
+  background-color: #ffd5d5; }
+  .remove-product-confirm #warning code {
+    font-weight: 600;
+    color: red; }
+
+.description {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #eafdfd;
+  border: 1px dashed #b8b8b8;
+  border-radius: 10px;
+  color: #646464; }
+
+.LYAF-dashboard-content {
+  margin-bottom: 0px !important; }
+
+.LYAF-remove-product-btn {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end; }
+  .LYAF-remove-product-btn button {
+    padding: 10px; }

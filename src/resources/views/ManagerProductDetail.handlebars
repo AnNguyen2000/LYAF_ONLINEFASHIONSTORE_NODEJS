@@ -1,0 +1,735 @@
+
+<link rel="stylesheet" href="/css/proManager.css">
+<link rel="stylesheet" href="/css/ManagerProductDetail.css">
+
+<div class="LYAF-dashboard-main">
+    {{!-- Dashboard navbar --}}
+<div class="LYAF-side-bar">
+    <div class="LYAF-side-bar-header">
+        <span class="LYAF-side-bar-title text-uppercase font-weight-bold">Dasboard</span>
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="LYAF-side-bar-menu">
+        <div class="LYAF-profit-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <span class="title">Revenue</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-admin-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-shield icon"></i>
+                <span class="title">Admin</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-user-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-users icon"></i>
+                <span class="title">User</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-staff-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-check icon"></i>
+                <span class="title">Staff</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fab fa-product-hunt icon"></i>
+                <span class="title">Product</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option LYAF-option-active">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">add product</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{!-- End Dashboard navbar --}}
+    {{!-- Dashboard body --}}
+    <div class="LYAF-dasboard-body">
+        <div class="LYAF-dashboard-header">
+            <span class="text-uppercase font-weight-bold">PRODUCT DETAIL</span>
+        </div>
+        <div class="LYAF-dashboard-content">
+            <div class="row">
+                <div class="LYAF-dashboard-block col">
+                    <div class="LYAF-block-title">
+                        <span class="font-weight-bold" style="letter-spacing: 0.04em">Product property</span>
+                    </div>
+                    <div class="LYAF-block-content">
+                        <input type="hidden" id="LYAF-the-product-id" value="{{data._id}}">
+                        <div class="LYAF-product-name">
+                            <span class=" font-weight-bold">Product name : <span class="name-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></span>
+                            <input type="text" id="nameeee" placeholder="Type your product name here" value="{{data.name}}" readonly disabled>
+                        </div>
+                        <div class="LYAF-product-name">
+                            <span class=" font-weight-bold">Date create :</span>
+                            <input type="text" placeholder="Type your product name here" value="{{#dateFormat date=data.date}}{{/dateFormat}}" readonly disabled>
+                        </div>
+                        <div class="row">
+                            <div class="LYAF-product-name col">
+                                <label for="basic-url" class="font-weight-bold">Category :</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" placeholder="Type your product name here" value="{{#if data.categoryId.parentId}}{{data.categoryId.parentId.name}}, {{/if}} {{data.categoryId.name}}" readonly disabled></i> 
+                                </div>
+                            </div>
+                            <div class="LYAF-product-price col">
+                                <label for="basic-url" class="font-weight-bold">Product price : <span class="price-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text font-weight-bold">VNĐ</span>
+                                    </div>
+                                    <input type="text" id="priceeee" class="form-control" placeholder="Price" aria-label="Price" readonly disabled value="{{#priceFormat price=data.price}}{{/priceFormat}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="LYAF-product-category col">
+                                <label for="basic-url" class="font-weight-bold">Đang giảm giá : <span class="sale-edit-btn" id="edit-btn" data-id="{{data._id}}"><i class="fas fa-edit"></i></span></label>
+                                <div class="input-group mb-3 sale-input-group">
+                                    {{#if data.isSale}}
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isSale" id="inlineRadio1" checked value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text font-weight-bold">%</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Price" readonly disabled aria-label="Price" value="{{#salePercentFormat data.sale}}{{/salePercentFormat}}">
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isSale" id="inlineRadio2" readonly disabled  value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">False</label>
+                                        </div>
+                                    {{else}}
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isSale" id="inlineRadio1" readonly disabled  value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">True</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isSale" id="inlineRadio2" checked value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">False</label>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div class="LYAF-product-price col">
+                                <label for="basic-url" class="font-weight-bold">Sản phẩm mới : <span class="new-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></label>
+                                <div class="input-group mb-3 new-input-group">
+                                    {{#if data.isNew}}
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isNew" id="inlineRadio1" checked value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">True</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isNew" id="inlineRadio2"  readonly disabled   value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">False</label>
+                                        </div>
+                                    {{else}}
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isNew" id="inlineRadio1" readonly disabled  value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">True</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="isNew" id="inlineRadio2" checked value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">False</label>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="LYAF-dashboard-block col">
+                    <div class="LYAF-block-title">
+                        <span class="font-weight-bold" style="letter-spacing: 0.04em">Product description</span>
+                    </div>
+                    <div class="LYAF-block-content">
+                        <div class="LYAF-product-description">
+                            <span class=" font-weight-bold">Product description : <span class="desc-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></span>
+                            <div id="desc">
+                                {{{data.desc}}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="LYAF-dashboard-block col">
+                    <div class="LYAF-block-title">
+                        <span class="font-weight-bold" style="letter-spacing: 0.04em">Images supplement</span>
+                    </div>
+                    <div class="LYAF-block-content">
+                        <div class="LYAF-product-image ">
+                            <div class="LYAF-preview-wrapper">
+                                <div class="LYAF-preview-container">
+                                    <div class="list-title">
+                                        <div class="title-info">
+                                            <span class="font-weight-bold title" style="letter-spacing: 0.04em">Product images : <span class="images-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></span>
+                                            <span class="font-weight-bold info" style="letter-spacing: 0.04em">{{data.images.length}} images</span>
+                                        </div>
+                                    </div>
+                                    <div class="LYAF-preview-list image-update-input">
+                                        {{#each data.images}}
+                                            <div class="LYAF-image-preview">
+                                                <a class="LYAF-aaaa" href="{{this}}">
+                                                <img src="{{this}}" class="$@da@# " height="auto" width="100">
+                                                </a>
+                                                {{#imageName url=this}}
+                                                {{/imageName}}
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="LYAF-dashboard-block col">
+                    <div class="LYAF-block-title">
+                        <span class="font-weight-bold" style="letter-spacing: 0.04em">Sub Products</span>
+                    </div>
+                    <div class="LYAF-block-content sub-product-preview">
+                        <div class="LYAF-sub-products-add">
+                            <div class="title-info">
+                                <span class="font-weight-bold title" style="letter-spacing: 0.04em">Sub product list : <span class="sub-edit-btn" id="edit-btn"  data-id="{{data._id}}"><i class="fas fa-edit"></i></span></span>
+                                <span class="font-weight-bold info" style="letter-spacing: 0.04em">{{data.subProduct.length}} products</span>
+                            </div>
+                        </div>
+                        <div class="LYAF-sub-products-list">
+                            {{#each data.subProduct}}
+                                <div class="sub-product sub-{{this._id}}">
+                                    <div class="sub-p-infor">
+                                        <table>
+                                            <tr>
+                                                <td><div class="id">
+                                                    <strong>Mã: </strong>
+                                                    <span id="id">{{this._id}}</span>
+                                                    </div>
+                                                </td>
+                                                <td><div class="color">
+                                                    <strong>Màu: </strong>
+                                                    <span id="value">{{this.colorId.name}}</span>
+                                                    </div>
+                                                </td>
+                                                <td><div class="size">
+                                                        <strong>Size: </strong>
+                                                        <span id="value">{{this.sizeId.name}}</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="quantity">
+                                                        <strong>Số lượng: </strong>
+                                                        <span id="value">{{this.quantity}}</span>
+                                                        <span class="edit-btn" id="edit-btn"  data-id="{{this._id}}" data-value="{{this.quantity}}" data-size="{{this.sizeId.name}}" data-color="{{this.colorId.name}}"><i class="fas fa-edit"></i></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-remove-product-btn">
+            <button type="button" class="btn btn-danger text-uppercase font-weight-bold">XOÁ SẢN PHẨM</button>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <span id="title"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text font-weight-bold">Số lượng</span>
+                        </div>
+                        <input type="number" class="form-control value-update" placeholder="Quantity" aria-label="Quantity" value="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+    
+    <!-- Modal -->
+    <div class="modal fade name-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <span id="title"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text font-weight-bold">Tên sản phẩm</span>
+                        </div>
+                        <input type="text" class="form-control value-update" placeholder="Name" aria-label="Name" value="{{data.name}}">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade price-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <span id="title"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text font-weight-bold">Giá sản phẩm</span>
+                        </div>
+                        <input type="number" class="form-control value-update" placeholder="Price" aria-label="Price" value="{{data.price}}">
+                        <div class="description">
+                            Vui lòng bỏ qua phần nghìn trên giá sản phẩm. <i><u>Ví dụ: </u></i> <b>100.000VNĐ</b> sẽ nhập là <b>100</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade sale-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <span id="title"></span>
+                    </div>
+                    {{#if data.isSale}}
+                    <div class="input-group mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale-update" id="sale-update-1" checked value="true">
+                            <label class="form-check-label" for="sale-update-1">True</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sale-update" id="sale-update-2" value="false">
+                            <label class="form-check-label" for="sale-update-2">False</label>
+                        </div>
+                    </div>
+                    <div class="sale-input">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text font-weight-bold">Giảm giá sản phẩm</span>
+                            </div>
+                            <input type="number" class="form-control value-update" placeholder="Sale" aria-label="Sale" value="{{data.sale}}">
+                            <div class="description">
+                                Vui lòng nhập số phần trăm. <i><u>Ví dụ: </u></i> <b>20%</b> sẽ nhập là <b>20</b>
+                            </div>
+                        </div>
+                    </div>
+                    {{else}}
+                        <div class="input-group mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sale-update" id="sale-update-1" value="true">
+                                <label class="form-check-label" for="sale-update-1">True</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sale-update" id="sale-update-2" checked value="false">
+                                <label class="form-check-label" for="sale-update-2">False</label>
+                            </div>
+                        </div>
+                        
+                        <div class="sale-input d-none">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text font-weight-bold">Giảm giá sản phẩm</span>
+                                </div>
+                                <input type="number" class="form-control value-update" placeholder="Sale" aria-label="Sale" value="{{data.sale}}">
+                                <div class="description">
+                                    Vui lòng nhập phần thậP phân. <i><u>Ví dụ: </u></i> <b>20%</b> sẽ nhập là <b>0.2</b>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade new-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <span id="title"></span>
+                    </div>
+                    {{#if data.isNew}}
+                    <div class="input-group mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="new-update" id="new-update-1" checked value="true">
+                            <label class="form-check-label" for="new-update-1">True</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="new-update" id="new-update-2" value="false">
+                            <label class="form-check-label" for="new-update-2">False</label>
+                        </div>
+                    </div>
+                    {{else}}
+                        <div class="input-group mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="new-update" id="new-update-1" value="true">
+                                <label class="form-check-label" for="new-update-1">True</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="new-update" id="new-update-2" checked value="false">
+                                <label class="form-check-label" for="new-update-2">False</label>
+                            </div>
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade desc-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="desc-update">{{{data.desc}}}</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade images-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="LYAF-preview-wrapper">
+                        <div class="LYAF-preview-container">
+                            <div class="list-title">
+                                <div class="title-info">
+                                    <span class="font-weight-bold title" style="letter-spacing: 0.04em">Product images : </span>
+                                    <span class="font-weight-bold info" style="letter-spacing: 0.04em">{{data.images.length}} images</span>
+                                </div>
+                                <div class="add-image font-weight-bold" style="letter-spacing: 0.04em">
+                                    <i class="fas fa-plus"></i> 
+                                    <span>More</span>
+                                    <input type="file" id="files" name="files" title="" class="image-upload" accept="image/*" multiple>
+                                </div>
+                            </div>
+                            <div class="LYAF-preview-list">
+                                {{#each data.images}}
+                                    <div class="LYAF-image-preview">
+                                        <a class="LYAF-aaaa" href="{{this}}">
+                                        <img src="{{this}}" class="$@da@# " height="auto" width="100">
+                                        </a>
+                                        {{#imageName url=this}}
+                                        {{/imageName}}
+                                        <span class="remove-image-btn"><i class="fa fa-trash"></i></span>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        Nắm ảnh và kéo để cập nhật thứ tự
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal fade sub-edit-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="LYAF-sub-products-add">
+                        <div class="title-info">
+                            <span class="font-weight-bold title" style="letter-spacing: 0.04em">Sub product list</span>
+                            <span class="font-weight-bold info" style="letter-spacing: 0.04em">0 products</span>
+                        </div>
+                        <div class="add-sub-product font-weight-bold" style="letter-spacing: 0.04em">
+                            <i class="fas fa-plus"></i> 
+                            <span>More</span>
+                        </div>
+                    </div>
+                    <div class="LYAF-sub-products-list">
+                        {{#each data.subProduct}}
+                        <div class="sub-product sub-{{this._id}}">
+                            <input type="hidden" id="color" value="{{this.colorId._id}}">
+                            <input type="hidden" id="size" value="{{this.sizeId._id}}">
+                            <input type="hidden" id="quantity" value="{{this.quantity}}">
+                            <div class="sub-p-infor">
+                                <div class="color">
+                                    <strong>Color: </strong>
+                                    <span id="value">{{this.colorId.name}}</span>
+                                </div>
+                                <div class="size">
+                                    <strong>Size: </strong>
+                                    <span id="value">{{this.sizeId.name}}</span>
+                                </div>
+                                <div class="quantity">
+                                    <strong>Quantity: </strong>
+                                    <span id="value">{{this.quantity}}</span>
+                                </div>
+                            </div>
+                            <span class="remove-sub-btn"><i class="fa fa-trash"></i></span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success confirm-update">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+
+    <!-- Modal -->
+    <div class="modal add-sub-modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm sản phẩm con</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="basic-url" class="font-weight-bold">Color</label>
+                <div class="input-group mb-3">
+                    <select name="simple" class="LYAF-selecter color-selecter" data-placeholder="Select your product color ...">
+                    </select>
+                </div>
+
+                <label for="basic-url" class="font-weight-bold">Size</label>
+                <div class="input-group mb-3">
+                    <select name="simple" class="LYAF-selecter size-selecter" data-placeholder="Select your product size ...">
+                    </select>
+                </div>
+
+                <label for="basic-url" class="font-weight-bold">Quantity</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary save">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    {{!-- End Dashboard body --}}
+    
+    <!-- Modal -->
+    <div class="modal fade remove-product-confirm" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xoá sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="remove-product-infor">
+                        <p>Bạn có chắc muốn xoá sản phẩm này ?</p>
+                        <p>Mã sản phẩm: <b>{{data._id}}</b></p>
+                        <p>Tên sản phẩm: <b>{{data.name}}</b></p>
+                        <div id="warning">
+                            <p>Vui lòng điền mã xác nhận bên dướinếu bạn đã chắc chắn muốn xoá</p>
+                            <p>Mã xác nhận: <code>{{data._id}}</code> </p>
+                            <div class="input-group mb-3 confirm-code-input">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text font-weight-bold">Mã xác nhận</span>
+                                </div>
+                                <input type="text" id="confirm-code" class="form-control" placeholder="Confirm" aria-label="Confirm" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-danger confirm-remove">Xác nhận xoá</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script  type="module" src="/js/productManager.js"></script>
+<script src="https://cdn.tiny.cloud/1/ycp1l3m6y4usaxn582ylh8wk67s6ze43ttkwlrbrd180idz6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.css" integrity="sha512-gGkweS4I+MDqo1tLZtHl3Nu3PGY7TU8ldedRnu60fY6etWjQ/twRHRG2J92oDj7GDU2XvX8k6G5mbp0yCoyXCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/dom-autoscroller@2.2.3/dist/dom-autoscroller.js"></script>
+<script type="module" src="/js/module/dashboard/ProductDetail.js"></script>

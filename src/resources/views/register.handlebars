@@ -1,0 +1,68 @@
+
+<div class="form__wrapper">
+    <div class="errorToast">
+        <span>
+            {{error}}
+        </span>
+        <span>
+            Vui lòng thử lại !
+        </span>
+    </div>
+    <div class="form__login">
+        
+        <form action="/register/check" method="post">
+            <div class="form__title" style="margin-top: 30px;">
+                <span class="form__title--name">
+                    Đăng Ký
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="rname">Họ và tên:</label>
+                <input name="rname" type="text" class="form-control" id="rname" value="{{valuename}}">
+            </div>
+            <div class="form-group">
+                <label for="rusername">Tài khoản:</label>
+                <input name="rusername" type="text" class="form-control" id="rusername" value="{{valueuser}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Mật khẩu:</label>
+                <input name="rpassword" type="password" class="form-control" id="rpassword">
+            </div>
+             <div class="form-group">
+                <label for="exampleInputPassword1">Xác nhận Mật khẩu:</label>
+                <input name="rpasswordcheck" type="password" class="form-control" id="rpasswordcheck">
+            </div>
+            <button type="submit" class="form__login--submit">Đăng ký</button>
+            <div class="register_ask_toast">
+                <span>Bạn đã có tài khoản?</span>
+                <span class="link_login_btn">Đăng nhập ngay</span>
+            </div>
+            {{#if error}}
+             <input type="hidden" id="error" value="true">
+             {{/if}}
+        </form>
+        <div class="social__link" style="margin-top: 30px;">
+                <img src="https://www.designbust.com/download/1016/png/google_logo_png_transparent512.png"/>
+        </div>
+    </div>
+
+    <div class="form__logo">
+        <img class="form__logo--img" src="/img/form_logo.png" alt="">
+    </div>
+   
+</div>
+<script src="/js/access.js"></script>
+<script>
+     function changeHeight_415(x) {
+    if (x.matches) { // If media query matches
+        form__login.style.height =`calc(${window.getComputedStyle(form__login).getPropertyValue('width')} + 300px)`;
+        window.addEventListener('resize', (e) =>{
+            form__login.style.height = `calc(${window.getComputedStyle(form__login).getPropertyValue('width')} + 300px)`;
+        });
+        form__title_name.style.fontSize = '25px';
+        pass_issues.style.fontSize = '13px';
+        document.querySelector('.form-check-input').style.height = "5px" ;
+    } 
+  }
+ changeHeight_415(window.matchMedia("(max-width: 415px)"));
+</script>

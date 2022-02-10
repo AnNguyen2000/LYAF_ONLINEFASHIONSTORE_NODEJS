@@ -1,0 +1,81 @@
+:root {
+  --width-sidebar: 250px; }
+
+body * {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif; }
+
+.grid__nav {
+  padding: 0 10px;
+  padding-top: 10px; }
+
+i {
+  cursor: pointer; }
+
+#breadcrumb {
+  font-weight: 600; }
+
+.LYAF-loading {
+  display: none;
+  background-color: #00000023;
+  z-index: 99999 !important;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  position: fixed;
+  top: 50%;
+  /* position the top  edge of the element at the middle of the parent */
+  left: 50%;
+  /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%); }
+  .LYAF-loading img {
+    position: fixed;
+    top: 50%;
+    /* position the top  edge of the element at the middle of the parent */
+    left: 50%;
+    /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+    z-index: 100000 !important; }
+  .LYAF-loading #LYAF-LOGO {
+    width: 75px;
+    height: 75px; }
+
+.newPro__logo {
+  height: 100px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.newPro__logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: fill; }
+
+.newPro__logo span {
+  font-size: 200%;
+  font-weight: 700;
+  margin-top: 20px;
+  background: #756D75;
+  background: -webkit-linear-gradient(to top, #756D75 50%, #000000 0%);
+  background: -moz-linear-gradient(to top, #756D75 50%, #000000 0%);
+  background: linear-gradient(to top, #756D75 50%, #000000 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.show {
+  display: block; }
+
+.none {
+  display: none; }
+
+.flex {
+  display: flex; }
+
+#currency {
+  text-decoration: underline; }

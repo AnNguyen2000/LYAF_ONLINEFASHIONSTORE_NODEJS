@@ -1,0 +1,199 @@
+<div class="profile_body">
+    <div class="profile_menu">
+        <div class="profile_intro">
+                <span id="profile_intro-name">{{user.name}}</span>
+                <span id="profile_intro-role">{{#whatRole role=user.role}}{{/whatRole}}</span>
+            </div>
+        <div class="profile_menu-detail">
+            <div class="profile_menu-item" id="userInfo"><span>Hồ sơ của tôi</span></div>
+            <div class="profile_menu-item focus-item" id="proStatus"><span><i class="fas fa-caret-square-left"></i><span id="return-proStatus">Quay lại danh sách đơn hàng</span></span></div>
+              <div class="profile_menu-item" id="addressList"><span>Sổ địa chỉ</span></div>
+            <div class="profile_menu-item" id="changePass"><span>Đổi mật khẩu</span></div>
+            <div class="profile_menu-item" id="Logout"><span>Đăng xuất</span></div>
+        </div>
+    </div>
+    <div class="userStatus">
+        <div class="userStatus-name">
+            <span>Mã đơn hàng: {{data._id}}</span>
+        </div>
+        <hr>
+        <div class="bill-infor">
+            <p>Đặt lúc {{#dateFormat date=data.date}}{{/dateFormat}}</p>
+            <p>Tình trạng: <b>{{#billStatus state=data.state}}{{/billStatus}}</b></p>
+        </div>
+        <hr>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Mã sản phẩm</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Tổng tiền</th>
+                    {{#equals val1=data.state val2=4}}
+                        <th scope="col">Đánh giá</th>
+                    {{/equals}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data.billDetail}}
+                    <tr>
+                        <td id="name"><img src="{{this.thumbnail}}" height="75" width="75"><a href="/product/detail/{{this.productId}}"><span>{{this.name}}</span><span id="size-color">{{this.color.name}} | {{this.size.name}}</span></a></td>
+                        <td>{{this.subProdId}}</td>
+                        <td>
+                            {{#if this.isSale}}
+                                <span>{{#saleFormat price=this.price sale=this.sale}}{{/saleFormat}}<u>đ</u></span>
+                                <span id="sale-price">{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                            {{else}}
+                                <span>{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                            {{/if}}
+                        </td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{#priceFormat price=this.totalPrice}}{{/priceFormat}}<u>đ</u></td>
+                        {{#equals val1=../data.state val2=4}}
+                            <td><button class="btn btn-warning rating-button" data-id="{{../this.productId}}">Đánh giá</button></td>
+                        {{/equals}}
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+            <hr>
+        <div class="price-infor">
+            <div class="temp-price">
+                <span id="title">Tạm tính</span>
+                <span id="number">{{#priceFormat price=tempPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <div class="sale-price">
+                <span id="title">Đã giảm</span>
+                <span id="number">{{#priceFormat price=salePrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <div class="delivery-price">
+                <span id="title">Phí vận chuyển</span>
+                <span id="number">{{#priceFormat price=deliveryPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+            <hr>
+            <div class="total-price text-uppercase font-weight-bold">
+                <span id="title">Tổng tiền</span>
+                <span id="number">{{#priceFormat price=totalPrice}}{{/priceFormat}}<u>đ</u></span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="font-weight-bold text-uppercase">Tình trạng thanh toán</h5>
+                <table class="address-profile">
+                    <tr>
+                        <td><strong>Hình thức thanh toán</strong></td>
+                        <td>{{#if data.paymentType}}Bằng MOMO{{else}}Bằng COD{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thanh toán</strong></td>
+                        <td>{{#if data.alreadyPay}}Đã thanh toán{{else}}Chưa thanh toán{{/if}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h5 class="font-weight-bold text-uppercase">Thông tin vận chuyển</h5>
+                <table class="address-profile">
+                    <tr>
+                        <td><strong>Họ và tên</strong></td>
+                        <td>{{data.shipProfile.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Địa chỉ</strong></td>
+                        <td>{{data.shipProfile.address}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tỉnh / Thành</strong></td>
+                        <td>{{data.shipProfile.province.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quận / Huyện</strong></td>
+                        <td>{{data.shipProfile.distric.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phường / Xã</strong></td>
+                        <td>{{data.shipProfile.ward.name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Số điện thoại</strong></td>
+                        <td>090909090</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {{#equals val1=data.state val2=1}}
+            <hr>
+            <div class="final-button">
+                <button type="button" name="" id="cancel-bill" class="btn btn-danger">Huỷ đơn hàng</button>
+            </div>
+        {{/equals}}
+    </div>
+    <!-- Modal -->
+    <div class="modal fade rating-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đánh giá sản phẩm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="LYAF-rating-container">
+                        <div class="" id="rating">
+                            <span class="star-1" data-id="1"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="1"></i></span>
+                            <span class="star-2" data-id="2"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="2"></i></span>
+                            <span class="star-3" data-id="3"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="3"></i></span>
+                            <span class="star-4" data-id="4"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="4"></i></span>
+                            <span class="star-5" data-id="5"><i class="fa-star fa-sm text-primary far" title="" data-toggle="tooltip" data-original-title="5"></i></span>
+                        </div>
+                        <div id="title">
+                            Bạn đánh giá sản phẩm này <b id="value">0</b> / <b>5</b> sao
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-primary confirm-rating">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="MA-BILL-ID" type="hidden" value="{{data._id}}">
+    <div class="modal fade cancel-bill-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Huỷ đơn hàng</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    Bạn có muốn huỷ đơn hàng này ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-danger confirm-cancel" data-id="{{data._id}}">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+
+<script src="/js/userInfo.js"></script>

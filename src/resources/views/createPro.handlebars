@@ -1,0 +1,35 @@
+<div class="create_container"  onload="test()">
+    <div class="create_title">
+        <span>Create New Product</span>
+    </div>
+    <div class="create__form">
+        <form action="/create/done" method="post">
+        <div class="form-group">
+            <label for="proName">Product's Name</label>
+            <input type="text" class="form-control" name="proName" placeholder="Enter name of the new product">
+        </div>
+        <div class="form-group">
+            <label for="proPrice">Product's Price</label>
+            <input type="text" class="form-control" name="proPrice" placeholder="Enter price of the new product">
+        </div>
+        <div class="form-group">
+            <label for="proOrigin">Product's Origin</label>
+            <input type="text" class="form-control"  name="proOrigin" placeholder="Enter the origin of the new product">
+        </div>
+         <div class="form-group">
+            <label for="proSale">Sale ?</label>
+           <select id="proSale__select" class="form-control" name="proSale" onchange="change()">
+                <option id="yes" value="Yes">Yes</option>
+                <option id="no" value="No" aria-selected="false" selected="selected">No</option>
+                
+            </select>
+        </div>
+        <div class="form-group proSaleValueShow" id="proSaleValueShow">
+            <label for="proSaleValue">Product's Sale</label>
+            <input type="text" class="form-control" name="proSaleValue" placeholder="Enter the sale of the new product">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<script src="./js/createPro.js"></script>

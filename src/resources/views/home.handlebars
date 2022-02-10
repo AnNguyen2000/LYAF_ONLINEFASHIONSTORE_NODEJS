@@ -1,0 +1,378 @@
+<link rel="stylesheet" href="/css/client.css">
+<div class="LYAF-home-container">
+    <div class="LYAF-home-banner">
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img src="/img/banner-1.jpg"></li>
+                    <li class="splide__slide"><img src="/img/banner-2.jpg"></li>
+                    <li class="splide__slide"><img src="/img/banner-3.jpg"></li>
+                    <li class="splide__slide"><img src="/img/banner-4.jpg"></li>
+                </ul>
+            </div>
+            <div class="splide__progress">
+                    <div class="splide__progress__bar">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="LYAF-home-body">
+        <div class="LYAF-body-block">
+            <div id="block-products-title">
+                <span class="font-weight-bold text-uppercase">Sản phẩm mới</span>
+            </div>
+
+            <div id="block-products">
+                {{#each data}}
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            {{#getThumbnails images=this.images id=this._id}}
+                            {{/getThumbnails}}
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price">
+                            {{#if this.isSale}}
+                                <span id="true-price">{{#saleFormat price=this.price sale=this.sale}} {{/saleFormat}}<span id="currency">đ</span></span>
+                                <span id="sale-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                            {{else}}
+                                <span id="true-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                            {{/if}}
+                            </div>
+                            <div id="name"><a href="/product/detail/{{this._id}}">{{this.name}}</a></div>
+                            <div id="category">
+                            {{#if this.categoryId.parentId}}
+                                <a href="/product/collection?category={{this.categoryId.parentId}}" id="parent">{{this.categoryId.parentId.name}}</a>, 
+                            {{/if}}
+                                <a href="/product/collection?category={{this.categoryId}}" id="child">{{this.categoryId.name}}</a>
+                            </div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    {{#ratingStar value=this.rating}}
+                                    {{/ratingStar}}
+                                </div>
+                                <div class="rating-value">
+                                    {{this.rating}}/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            <div id="block-products-bottom">
+                    <a href="/product/collection?isNew=true"><span id="more">Xem thêm</span></a>
+            </div>
+        </div>
+        <div class="LYAF-body-banner">
+            <img id="banner" src="/img/sale-banner.jpg">
+        </div>
+        <div class="LYAF-body-block">
+            <div id="tab-container">
+                <div id="block-products-title" class="tab-toggle active" data-toggle="sale">
+                    <span class="font-weight-bold text-uppercase">Khuyến mãi</span>
+                </div>
+                {{!-- <div id="block-products-title" class="tab-toggle" data-toggle="popular">
+                    <span class="font-weight-bold text-uppercase">Bán chạy</span>
+                </div> --}}
+            </div>
+            <div id="tab-sale" class="block-tab">
+                <div id="block-products">
+                    {{#each sale}}
+                        <div class="LYAF-product-component">
+                            <div class="LYAF-product-thumbnails">
+                                {{#getThumbnails images=this.images id=this._id}}
+                                {{/getThumbnails}}
+                            </div>
+                            <div class="LYAF-product-info">
+                                <div id="price">
+                                {{#if this.isSale}}
+                                    <span id="true-price">{{#saleFormat price=this.price sale=this.sale}} {{/saleFormat}}<span id="currency">đ</span></span>
+                                    <span id="sale-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                                {{else}}
+                                    <span id="true-price">{{#priceFormat price=this.price}} {{/priceFormat}}<span id="currency">đ</span></span>
+                                {{/if}}
+                                </div>
+                                <div id="name"><a href="/product/detail/{{this._id}}">{{this.name}}</a></div>
+                                <div id="category">
+                                {{#if this.categoryId.parentId}}
+                                    <a href="/product/collection?category={{this.categoryId.parentId}}" id="parent">{{this.categoryId.parentId.name}}</a>, 
+                                {{/if}}
+                                    <a href="/product/collection?category={{this.categoryId}}" id="child">{{this.categoryId.name}}</a>
+                                </div>
+                                <div id="rating">
+                                    <div class="rating-stars">
+                                        {{#ratingStar value=this.rating}}
+                                        {{/ratingStar}}
+                                    </div>
+                                    <div class="rating-value">
+                                        {{this.rating}}/5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+                <div id="block-products-bottom">
+                    <a href="/product/collection?isSale=true"><span id="more">Xem thêm</span></a>
+                </div>
+            </div>
+            {{!-- <div id="tab-popular" class="block-tab d-none">
+                <div id="block-products">
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1001-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1001-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1003-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1003-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1002-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1002-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1004-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1004-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1003-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1003-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1002-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1002-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1001-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1001-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1004-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1004-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span class="d-none" id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1002-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1002-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LYAF-product-component">
+                        <div class="LYAF-product-thumbnails">
+                            <img src="/img/ATNS1002-1.jpg" alt="" id="main-thumbnail">
+                            <img src="/img/ATNS1002-2.jpg" alt="" id="second-thumbnail">
+                        </div>
+                        <div class="LYAF-product-info">
+                            <div id="price"><span id="true-price">250.000 VND</span><span id="sale-price">350.000 VND</span></div>
+                            <div id="name">Áo Nỉ (Sweatshirt) BOUTON Stay Chill</div>
+                            <div id="category"><a href="#" id="parent">Áo</a>, <a href="#" id="child">Áo thun</a></div>
+                            <div id="rating">
+                                <div class="rating-stars">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                                <div class="rating-value">
+                                    4.5/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="block-products-bottom">
+                    <span id="more">Xem thêm</span>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="/js/client.js"></script>

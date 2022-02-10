@@ -1,0 +1,51 @@
+<div class="profile_body">
+    <div class="profile_menu">
+        <div class="profile_intro">
+                <span id="profile_intro-name">{{user.name}}</span>
+                <span id="profile_intro-role">{{#whatRole role=user.role}}{{/whatRole}}</span>
+            </div>
+        <div class="profile_menu-detail">
+            <div class="profile_menu-item focus-item" id="userInfo"><span>Hồ sơ của tôi</span></div>
+            <div class="profile_menu-item" id="proStatus"><span>Đơn hàng</span></div>
+              <div class="profile_menu-item" id="addressList"><span>Sổ địa chỉ</span></div>
+            <div class="profile_menu-item" id="changePass"><span>Đổi mật khẩu</span></div>
+            <div class="profile_menu-item" id="Logout"><span>Đăng xuất</span></div>
+        </div>
+    </div>
+    <div class="profile_info">
+        <div class="profile_info-name">
+            <span>Thông tin về tôi</span>
+        </div>
+        <form class="profile_info-detail" action="/userInfo/userInfoUpdate" method="post">
+            <div class="form-group">
+                <label for="profilename">Họ và tên</label>
+                <input type="profilename" class="form-control profileInput" id="profilename" name="profilename" value="{{user.name}}">
+            </div>
+            <div class="form-group">
+                <label for="profilemail">Email</label>
+                <input type="profilemail" class="form-control profileInput" id="profilemail" name="profilemail" value="{{user.email}}">
+            </div>
+            <div class="form-group">
+                <label for="profilphone">Số điện thoại</label>
+                <input type="profilephone" class="form-control profileInput" id="profilephone" name="profilephone" value="{{user.phoneNumber}}">
+            </div>
+            <button type="submit" class="profileSubmit" id="profileSubmit"><span>Cập nhật ngay !</span></button>
+            <div class="profileUpdateNotice"><span>Bạn muốn cập nhật ?</span>̣</div>
+        </form>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-intro">
+        <span style="font-weight: bold;">DOANH NGHIỆP KINH DOANH THỜI TRANG NAM LYAF</span>
+        <span>Chuyên kinh doanh các loại thời trang nam sỉ & lẻ</span>
+        <span>Free ship với hóa đơn trên 500.000 VND</span>
+    </div>
+    <div class="footer-detail">
+        <span style="font-weight: bold;">Đồng Thưc Hiện</span>
+        <span>Phạm Nhật Minh</span>
+        <span>Nguyễn Nhật Linh</span>
+        <span>Nguyễn Khánh An</span>
+    </div>
+</div>
+<script src="/js/userInfo.js"></script>

@@ -1,0 +1,312 @@
+
+
+<link rel="stylesheet" href="/css/proManager.css">
+<div class="LYAF-dashboard-main">
+    {{!-- Dashboard navbar --}}
+<div class="LYAF-side-bar">
+    <div class="LYAF-side-bar-header">
+        <span class="LYAF-side-bar-title text-uppercase font-weight-bold">Dasboard</span>
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="LYAF-side-bar-menu">
+        {{!-- <div class="LYAF-profit-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-hand-holding-usd icon"></i>
+                <span class="title">Revenue</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-admin-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-shield icon"></i>
+                <span class="title">Cá nhân</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option LYAF-option-active">
+                    <a href="/manager/me">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Các đơn đã nhận</span>
+                    </a>
+                </div>
+                {{!-- <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div> --}}
+            </div>
+        </div>
+        <div class="LYAF-user-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-users icon"></i>
+                <span class="title">Tài khoản</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/account">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Quản lý tài khoản</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="LYAF-staff-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-user-check icon"></i>
+                <span class="title">Staff</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+                <div class="LYAF-menu-option">
+                    <i class="fas fa-circle icon"></i>
+                    <span class="title">Revenue</span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fas fa-receipt icon"></i>
+                <span class="title">Đơn hàng</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/ship">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần giao</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/bill/manage">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Đơn cần xử lý</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="LYAF-product-menu LYAF-menu">
+            <div class="LYAF-menu-header">
+                <i class="fab fa-product-hunt icon"></i>
+                <span class="title">Sản phẩm</span>
+                <i class="fas fa-chevron-right end"></i>
+            </div>
+            <div class="LYAF-menu-content">
+                <div class="LYAF-menu-option">
+                    <a href="/manager/list">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Danh sách sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/add">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thêm sản phẩm</span>
+                    </a>
+                </div>
+                <div class="LYAF-menu-option">
+                    <a href="/manager/property">
+                        <i class="fas fa-circle icon"></i>
+                        <span class="title">Thuộc tính</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{!-- End Dashboard navbar --}}
+    {{!-- Dashboard body --}}
+    <div class="LYAF-dasboard-body">
+        
+    <div class="LYAF-dashboard-header">
+        <span class="text-uppercase font-weight-bold">Chi tiết đƠn</span>
+    </div>
+    <div class="LYAF-dashboard-content">
+        <div class="ma-bill-detail">
+            <div class="row">
+                <div class="action-bill-detail col-md-4">
+                    <span id="title" class="mb-3">Quản lý đơn hàng </span>
+                    <hr>
+                    
+                    {{#if data.manageAssigned}}
+                        <h4>Đơn hàng</h4>
+                        <div class="form-group row">
+                            <label for="inputState" class="col-sm-2 col-form-label col-form-label-sm">Thay đổi</label>
+                            <div class="col-sm-7">
+                            <select id="inputState" name="inputState" class="form-control">
+                                <option value="2" {{#equals val1=data.state val2=2}}selected{{/equals}}>Xác nhận đơn hàng</option>
+                                <option value="0" {{#equals val1=data.state val2=0}}selected{{/equals}}>Huỷ đơn hàng</option>
+                            </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary col-sm-3 confirm-state" data-id="{{data._id}}">Xác nhận</button>
+                        </div>
+                        <hr>
+                        <h4>Tình trạng thanh toán</h4>
+                        <div class="form-group row">
+                            <label for="payState" class="col-sm-2 col-form-label col-form-label-sm">Thay đổi</label>
+                            <div class="col-sm-7">
+                            <select id="payState" name="payState" class="form-control">
+                                {{#equals val1=data.alreadyPay val2=false}}
+                                    <option value="0" selected>Chưa thanh toán</option>
+                                    <option value="1">Đã thanh toán</option>
+                                {{/equals}}
+                                {{#equals val1=data.alreadyPay val2=true}}
+                                    <option value="0">Chưa thanh toán</option>
+                                    <option value="1" selected>Đã thanh toán</option>
+                                {{/equals}}
+                            </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary col-sm-3 confirm-payment" data-id="{{data._id}}">Xác nhận</button>
+                        </div>
+                    {{else}}
+                        <div class="form-group row">
+                            <label for="inputState" class="col-sm-6 col-form-label col-form-label-sm"><h4>Nhận đơn hàng này</h4></label>
+                            <button type="submit" class="btn btn-primary col-sm-4 confirm-manage" data-id="{{data._id}}">Xác nhận</button>
+                        </div>
+                    {{/if}}
+                    <hr>
+                </div>
+                <div class="userStatus col-md-8">
+                    <div class="userStatus-name">
+                        <span>Mã đơn hàng: {{data._id}}</span>
+                    </div>
+                    <hr>
+                    
+                    <div class="bill-infor">
+                        <p>Tình trạng: <b>{{#billStatus state=data.state}}{{/billStatus}}</b></p>
+                        <p>Đặt lúc {{#dateFormat date=data.date}}{{/dateFormat}}</p>
+                    </div>
+                    <hr>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                            <th scope="col">Tên sản phẩm</th>
+                            <th scope="col">Mã sản phẩm</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Tổng tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each data.billDetail}}
+                                <tr>
+                                <td id="name"><img src="{{this.thumbnail}}" height="75" width="75"><a href="/product/detail/{{this.productId}}"><span>{{this.name}}</span><span id="size-color">{{this.color.name}} | {{this.size.name}}</span></a></td>
+                                <td>{{this.subProdId}}</td>
+                                <td>
+                                    {{#if this.isSale}}
+                                        <span>{{#saleFormat price=this.price sale=this.sale}}{{/saleFormat}}<u>đ</u></span>
+                                        <span id="sale-price">{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                                    {{else}}
+                                        <span>{{#priceFormat price=this.price}}{{/priceFormat}}<u>đ</u></span>
+                                    {{/if}}
+                                </td>
+                                <td>{{this.quantity}}</td>
+                                <td>{{#priceFormat price=this.totalPrice}}{{/priceFormat}}<u>đ</u></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                        <hr>
+                    <div class="price-infor">
+                        <div class="temp-price">
+                            <span id="title">Tạm tính</span>
+                            <span id="number">{{#priceFormat price=tempPrice}}{{/priceFormat}}<u>đ</u></span>
+                        </div>
+                        <div class="sale-price">
+                            <span id="title">Đã giảm</span>
+                            <span id="number">{{#priceFormat price=salePrice}}{{/priceFormat}}<u>đ</u></span>
+                        </div>
+                        <div class="delivery-price">
+                            <span id="title">Phí vận chuyển</span>
+                            <span id="number">{{#priceFormat price=deliveryPrice}}{{/priceFormat}}<u>đ</u></span>
+                        </div>
+                        <hr>
+                        <div class="total-price text-uppercase font-weight-bold">
+                            <span id="title">Tổng tiền</span>
+                            <span id="number">{{#priceFormat price=totalPrice}}{{/priceFormat}}<u>đ</u></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="font-weight-bold text-uppercase">Tình trạng thanh toán</h5>
+                            <table class="address-profile">
+                                <tr>
+                                    <td><strong>Hình thức thanh toán</strong></td>
+                                    <td>{{#if data.paymentType}}Bằng MOMO{{else}}Bằng COD{{/if}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thanh toán</strong></td>
+                                    <td>{{#if data.alreadyPay}}Đã thanh toán{{else}}Chưa thanh toán{{/if}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="font-weight-bold text-uppercase">Thông tin vận chuyển</h5>
+                            <table class="address-profile">
+                                <tr>
+                                    <td><strong>Họ và tên</strong></td>
+                                    <td>{{data.shipProfile.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Địa chỉ</strong></td>
+                                    <td>{{data.shipProfile.address}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tỉnh / Thành</strong></td>
+                                    <td>{{data.shipProfile.province.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quận / Huyện</strong></td>
+                                    <td>{{data.shipProfile.distric.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phường / Xã</strong></td>
+                                    <td>{{data.shipProfile.ward.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Số điện thoại</strong></td>
+                                    <td>{{data.shipProfile.phone}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {{!-- End Dashboard body --}}
+</div>
+<script  type="module" src="/js/productManager.js"></script>
+<script src="https://cdn.tiny.cloud/1/ycp1l3m6y4usaxn582ylh8wk67s6ze43ttkwlrbrd180idz6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js" integrity="sha512-NgXVRE+Mxxf647SqmbB9wPS5SEpWiLFp5G7ItUNFi+GVUyQeP+7w4vnKtc2O/Dm74TpTFKXNjakd40pfSKNulg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.css" integrity="sha512-gGkweS4I+MDqo1tLZtHl3Nu3PGY7TU8ldedRnu60fY6etWjQ/twRHRG2J92oDj7GDU2XvX8k6G5mbp0yCoyXCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://unpkg.com/dom-autoscroller@2.2.3/dist/dom-autoscroller.js"></script>
+<script src="/js/module/dashboard/ManageDetail.js"></script>

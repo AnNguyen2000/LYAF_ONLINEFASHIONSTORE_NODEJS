@@ -1,0 +1,242 @@
+.LYAF-checkout-container{
+    .right-side{
+        background-color: #FAFAFA;
+        border-left: 2px solid #e6e6e6;
+        border-right: 2px solid #e6e6e6;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 10px;;
+        .LYAF-list-product{
+            width: 100%;
+            td{
+                vertical-align: middle;
+            }
+            #quantity{
+                text-align: center; 
+            }
+            .product-property{
+                display:flex;
+                flex-direction: row;
+                height: fit-content;
+                align-items: center;
+                img{
+                    border-radius: 10px;
+                }
+                #thumbnail{
+                    margin-right: 10px;
+                }
+                #property{
+                    font-size: 13px;;
+                }
+                #infor{
+                    display:flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        #sale-price{
+            font-size: 13px;
+            text-decoration: line-through red
+        }
+        .temp-price, 
+        .sale-price,
+        .delivery-price,
+        .totle-price{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .totle-price{
+            font-size: 18px;
+        }
+        // .LYAF-list-product{
+        //     .LYAF-product{
+        //         display:flex;
+        //         flex-direction: row;
+        //         height: fit-content;
+        //         align-items: center;
+        //         img{
+        //             border-radius: 10px;
+        //         }
+        //         #thumbnail{
+        //             margin-right: 10px;
+        //         }
+        //         #property{
+        //             font-size: 13px;;
+        //         }
+        //         #infor{
+        //             display:flex;
+        //             flex-direction: column;
+        //         }
+
+        //         #price{
+        //             margin-left: auto
+        //         }
+        //     }
+        // }
+    }
+
+    .left-side{
+        .checkout-form{
+            display: block;
+            width: 100%;;
+        }
+        .profile-helper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .delivery-form{
+            display: block;
+            height: fit-content;
+            width: 100%;
+        }
+        .payment-selection{
+            .payment-option{
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+
+                .payment-infor{
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                
+                    position: relative;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+        
+                    
+                    /* Hide the browser's default radio button */
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    
+                    /* Create a custom radio button */
+                    .checkmark {
+                        position: absolute;
+                        height: 25px;
+                        width: 25px;
+                        margin-left: 10px;
+                        background-color: rgb(199, 199, 199);
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                    
+                    .infor{
+                        font-size: 16px;
+                        margin-left: 10px;
+                    }
+                    
+                    /* Create the indicator (the dot/circle - hidden when not checked) */
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                    
+                    /* Show the indicator (dot/circle) when checked */
+                    input:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                    
+                    /* Style the indicator (dot/circle) */
+                    .checkmark:after {
+                        top: 9px;
+                        left: 9px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: white;
+                    }
+                    img{
+                        margin-left: 50px;
+                    }
+                    .payment-desc{
+                        padding: 20px;
+                        width: 100%;
+                        background-color: #ccc;
+                    }
+                }
+
+                .payment-desc{
+                    display: none;
+                    border-top: 1px solid #ccc;
+                    border-radius: 0  0 10px 10px;
+                    padding: 20px;
+                    text-align: center;
+                    width: 100%;
+                    background-color: rgb(228, 228, 228);
+                }
+            }
+            .payment-option:hover input ~ .checkmark {
+                background-color: #ccc;
+            }
+            
+            /* When the radio button is checked, add a blue background */
+            .payment-option input:checked ~ .checkmark {
+                background-color: #2196F3;
+            }
+
+        }
+
+        .bottom-button{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            button{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+}
+
+.select-profile-modal{
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .showProfileHere{
+        width: 100%;
+    }
+    .forShowAddress{
+        margin-bottom: 20px;
+        width: 100%;
+        cursor: pointer;
+        border: 1px solid black;
+        td{
+            padding: 10px;
+        }
+        #header{
+            color: white;
+            height: 30px;
+            background-color: black;
+            #tempborder{
+                background-color: black;
+            }
+        }
+       
+    }
+    .forShowAddress:hover{
+        border: 2px solid rgb(0, 51, 109);
+        #header{
+            background-color: rgb(0, 51, 109);
+            #tempborder{
+                background-color: rgb(0, 51, 109);
+            }
+        }
+       
+
+    }
+}

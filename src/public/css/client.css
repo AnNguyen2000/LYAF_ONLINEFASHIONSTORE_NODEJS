@@ -1,0 +1,219 @@
+.scrolltotop {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #CF1512;
+  position: fixed;
+  right: 10px;
+  bottom: 23%;
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+  opacity: 0.7; }
+
+.scrolltotop span {
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  top: 28%;
+  left: 22%; }
+
+.LYAF-home-container {
+  width: 100%; }
+  .LYAF-home-container #block-products-title span {
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px; }
+  .LYAF-home-container .LYAF-home-banner .splide .splide__slide img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 700px;
+    max-width: 100%; }
+  .LYAF-home-container .LYAF-home-banner .splide .splide__progress__bar {
+    height: 3px;
+    margin-bottom: 5px; }
+  .LYAF-home-container .LYAF-home-body {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+    .LYAF-home-container .LYAF-home-body .LYAF-body-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products-title {
+        text-align: center;
+        margin: 20px;
+        font-size: 28px; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px; }
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    display: none; }
+  100% {
+    opacity: 1;
+    display: block; } }
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+    display: block; }
+  100% {
+    opacity: 0;
+    display: none; } }
+        .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component {
+          max-width: 250px;
+          min-width: 175px;
+          border: 1px solid transparent;
+          padding: 5px;
+          flex: 1 0 20%; }
+          .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-thumbnails {
+            cursor: pointer;
+            position: relative; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-thumbnails img {
+              max-width: 100%;
+              height: auto; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-thumbnails #main-thumbnail {
+              animation-name: fadeInAnimation;
+              animation-fill-mode: both;
+              animation-duration: .5s; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-thumbnails #second-thumbnail {
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0; }
+          .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info {
+            position: relative; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #price {
+              position: absolute;
+              top: -30px;
+              font-weight: 600;
+              background-color: rgba(240, 248, 255, 0.7);
+              transition: 0.2s; }
+              .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #price span {
+                margin-right: 5px;
+                margin-left: 5px; }
+              .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #price #true-price {
+                font-size: 16px; }
+              .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #price #sale-price {
+                font-size: 13px;
+                text-decoration: line-through red; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #name {
+              font-weight: 600;
+              font-size: 16px;
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              cursor: pointer;
+              transition: 0.3s; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #name:hover {
+              color: deepskyblue; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #category {
+              line-height: 1; }
+              .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #category a {
+                font-weight: 600;
+                font-size: 12px;
+                color: #858585; }
+            .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component .LYAF-product-info #rating {
+              display: flex;
+              flex-direction: row;
+              font-weight: 600;
+              justify-content: space-between; }
+        .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component:hover {
+          border: 1px solid black; }
+          .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component:hover .LYAF-product-thumbnails #main-thumbnail {
+            animation-name: fadeOutAnimation;
+            animation-fill-mode: both;
+            animation-duration: .5s; }
+          .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component:hover .LYAF-product-thumbnails #second-thumbnail {
+            animation-name: fadeInAnimation;
+            animation-fill-mode: both;
+            animation-duration: .5s; }
+          .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products .LYAF-product-component:hover .LYAF-product-info #price {
+            top: -40px; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products-bottom {
+        margin: 20px;
+        cursor: pointer; }
+        .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products-bottom span {
+          font-size: 13px;
+          font-weight: 600;
+          padding: 5px;
+          padding-right: 10px;
+          padding-left: 10px;
+          background-color: black;
+          color: white;
+          border: 2px solid black;
+          transition: 0.3s;
+          text-decoration: underline; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block #block-products-bottom:hover span {
+        background-color: white;
+        color: black; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block #tab-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        .LYAF-home-container .LYAF-home-body .LYAF-body-block #tab-container .tab-toggle {
+          cursor: pointer;
+          color: darkgrey; }
+        .LYAF-home-container .LYAF-home-body .LYAF-body-block #tab-container .active {
+          color: black;
+          border-bottom: 2px solid black;
+          padding-bottom: 5px; }
+      .LYAF-home-container .LYAF-home-body .LYAF-body-block .block-tab {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+    .LYAF-home-container .LYAF-home-body .LYAF-body-banner #banner {
+      height: auto;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+
+@media screen and (max-width: 640px) {
+  .LYAF-home-container .LYAF-home-banner .splide .splide__slide img {
+    height: 300px;
+    max-width: 100%; }
+  .LYAF-home-container .LYAF-home-body {
+    width: 100%; }
+  .scrolltotop {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #CF1512;
+    position: fixed;
+    right: 10px;
+    bottom: 18%;
+    cursor: pointer;
+    z-index: 3;
+    display: none;
+    opacity: 0.7; } }
+
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  color: bisque;
+  display: flex; }
+  .footer .footer-intro, .footer .footer-detail {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 30px; }
+
+.LYAF-header-account-infor a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s; }
+
+.LYAF-header-account-infor a:hover {
+  color: aqua; }

@@ -1,0 +1,152 @@
+
+<div class="LYAF-header">
+    <nav class="navbar navbar-expand-lg navbar-light LYAF-navbar" >
+        <!-- LYAF BRAND -->
+        <a class="navbar-brand font-weight-bold" href="/">
+            <img src="/img/logo.jpg" alt="">
+            </a>
+        <!-- END LYAF BRAND -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold m-1 text-uppercase active" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold m-1 text-uppercase" href="/product/collection?isSale=true">Khuyến mãi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold m-1 text-uppercase" href="/product/collection?isNew=true">Sản phẩm mới</a>
+                </li>
+                <li class="nav-item dropdown LYAF-header-dropdown">
+                    <a class="nav-link dropdown-toggle font-weight-bold text-uppercase m-1" href="javascript: void (0)" id="btn-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sản phẩm
+                    </a>
+                    <div class="dropdown-menu" id="dropdown-action" aria-labelledby="a-dropdown">
+                        <div class="LYAF-product-dropdown">
+                            
+                        </div>
+                    </div>
+                </li>
+                
+                {{!-- {{#manyEqTo val1="admin" val2="staff" key=user.role }} --}}
+                {{#if boss}}
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold m-1 text-uppercase" href="/manager">Dashboard</a>
+                    </li>
+                {{/if}}    
+                {{!-- {{/manyEqTo }} --}}
+            </ul>
+        </div>
+        <div class="LYAF-header-right">
+            <div class="LYAF-header-search shake">
+                    <i class="fas fa-search fs-3"></i>
+            </div>
+            <div class="LYAF-header-cart shake">
+                <i class="fas fa-shopping-cart fs-3"><span class="LYAF-no-products">0</span></i>
+            </div>
+            <div class="LYAF-header-account">
+                <i class="fas fa-user-circle fs-3 shake"></i>
+                <div class="LYAF-header-popup">
+                    {{#if user}}
+                        <div class="LYAF-header-account-infor">
+                            <a href="/userInfo">Chào, <i id="name">{{user.name}}</i></a>
+                            <hr>
+                            <a href="/logout"><span>Đăng xuất</span></a>
+                        </div>
+                    {{else}}
+                    <div class="LYAF-header-login-prompt">
+                        <a href="/login"> Đăng nhập</a>
+                        <hr>
+                        <a href="/register">Đăng ký</a>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="LYAF-search-site">
+        <div class="blur-bg"></div>
+        <div class="LYAF-search-box">
+            <span class="LYAF-search-box-close">
+                <i class="fas fa-times"></i> 
+            </span>
+            <span class="LYAF-search-box-header font-weight-bold text-uppercase"><p>Tìm kiếm</p></span>
+            <div class="LYAF-search-input">
+                <input class="font-weight-bold" type="text" placeholder="Tìm kiếm sản phẩm . . . " id="searchinput">
+                <i class="fas fa-search fs-4 " id="searchbtn"></i>
+            </div>
+            <div class="LYAF-search-output">
+                {{!-- <div class="LYAF-search-product">
+                    <div class="LYAF-search-product-info">
+                        <p class="LYAF-search-product-name text-uppercase">áo thun hình con mèo</p>
+                        <p class="LYAF-search-product-price">100.000<u>đ</u></p>
+                    </div>
+                    <img src="http://rainbow.info.vn/wp-content/plugins/wp-ulike/assets/img/no-thumbnail.png"class="LYAF-search-product-thumbnail">
+                </div> --}}
+            </div>
+            <div class="LYAF-more-search">
+                <a href="#">Xem thêm các sản phẩm khác</a>
+            </div>
+        </div>
+    </div>
+    <div class="LYAF-cart-site">
+        <div class="blur-bg"></div>
+        <div class="LYAF-cart-box">
+            <span class="LYAF-cart-box-close">
+                <i class="fas fa-times"></i> 
+            </span>
+            <span class="LYAF-cart-box-header font-weight-bold text-uppercase"><p>Giỏ hàng</p></span>
+            
+            <div class="LYAF-cart-list">
+                
+            </div>
+            
+            <span class="LYAF-cart-end-list"><hr></span>
+            <div class="LYAF-cart-sum-list">
+                <span>
+                    <p class="text-uppercase">tổng tiền</p>
+                    <p class="LYAF-cart-sum-price"></p>
+                </span>
+            </div>
+            <div class="LYAF-cart-pay-btn"> 
+                <a class="text-uppercase font-weight-bold" href="javascript:void(0)">Thanh toán</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade prompt-login-modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title">Đăng nhập</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        Bạn phải đăng nhập để sử dụng chức năng này. Bấm vào <a href="/login">đây</a> để đăng nhập hoặc <a href="/register">tạo tài khoản</a> mới.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $('#exampleModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+            
+        });
+    </script>
+</div>
+<script src="/js/header.js"></script>

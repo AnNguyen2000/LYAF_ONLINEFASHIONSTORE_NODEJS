@@ -1,0 +1,42 @@
+<div class="profile_body">
+    <div class="profile_menu">
+        <div class="profile_intro">
+                <span id="profile_intro-name">{{user.name}}</span>
+                <span id="profile_intro-role">{{#whatRole role=user.role}}{{/whatRole}}</span>
+            </div>
+        <div class="profile_menu-detail">
+            <div class="profile_menu-item" id="userInfo"><span>Hồ sơ của tôi</span></div>
+            <div class="profile_menu-item" id="proStatus"><span>Đơn hàng</span></div>
+            <div class="profile_menu-item" id="addressList"><span>Sổ địa chỉ</span></div>
+            <div class="profile_menu-item focus-item" id="changePass"><span>Đổi mật khẩu</span></div>
+            <div class="profile_menu-item" id="Logout"><span>Đăng xuất</span></div>
+        </div>
+    </div>
+    <div class="changePass">
+        <div class="profile_info-name">
+            <span>Đổi mật khẩu</span>
+           <span id="changeError"></span>  {{!-- Đặt lỗi ở đây --}}
+        </div>
+        <div class="changePass-detail">
+            <div class="form-group">
+                <label for="old-pass">Mật khẩu cũ:</label>
+                <input type="password" class="form-control" id="oldpass" name="oldpass">
+            </div>
+            <div class="form-group">
+                <label for="new-pass">Mật khẩu mới:</label>
+                <input type="password" class="form-control" id="newpass" name="newpass">
+            </div>
+             <div class="form-group">
+                <label for="new-pass">Xác nhận mật khẩu:</label>
+                <input type="password" class="form-control" id="newpasscheck" name="newpasscheck">
+            </div>
+
+            <button type="submit" class="changePassSubmit">Cập nhật ngay !</button>
+        </div>
+    </div>
+</div>
+<script src="/js/userInfo.js"></script>
+<script>
+    
+    
+</script>

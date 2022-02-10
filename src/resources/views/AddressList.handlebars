@@ -1,0 +1,171 @@
+<div class="profile_body">
+    <div class="profile_menu">
+        <div class="profile_intro">
+                <span id="profile_intro-name">{{user.name}}</span>
+                <span id="profile_intro-role">{{#whatRole role=user.role}}{{/whatRole}}</span>
+            </div>
+        <div class="profile_menu-detail">
+            <div class="profile_menu-item " id="userInfo"><span>Hồ sơ của tôi</span></div>
+            <div class="profile_menu-item" id="proStatus"><span>Đơn hàng</span></div>
+              <div class="profile_menu-item focus-item" id="addressList"><span>Sổ địa chỉ</span></div>
+            <div class="profile_menu-item" id="changePass"><span>Đổi mật khẩu</span></div>
+            <div class="profile_menu-item" id="Logout"><span>Đăng xuất</span></div>
+        </div>
+    </div>
+    <div class="userStatus">
+        <div class="userStatus-name">
+            <span>Danh sách địa chỉ khả dụng</span>
+        </div>
+        <div class="Address-optionList">
+                <i class="fas fa-plus-square " id="addressAdd" data-toggle="modal" data-target="#addAdd"></i>
+                
+        </div>
+        <div id="addressHolder">
+            {{#each data}}
+                <table class="address-profile forList">
+                            <tr id="header" class="countName">
+                                <td style="background-color: black;"></td>
+                                <td class="icon-trash">
+                                    <div class="addressUpdate" data-id="{{this._id}}" data-toggle="modal" data-target="#addUpdate"><i class="fas fa-marker"></i></div>
+                                    <div  class="addressDelete" data-id="{{this._id}}"><i class="fas fa-trash-alt"></i></div>
+                                    
+                                </td>
+                            
+                            </tr>
+                            <tr>
+                                <td><strong>Họ và tên</strong></td>
+                                <td class="tdname">{{this.name}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Địa chỉ</strong></td>
+                                <td class="tdaddress">{{this.address}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tỉnh / Thành</strong></td>
+                                <td class="tdprovince">{{this.province.name}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quận / Huyện</strong></td>
+                                <td class="tddistrict">{{this.distric.name}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phường / Xã</strong></td>
+                                <td class="tdward">{{this.ward.name}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Số điện thoại</strong></td>
+                                <td class="tdphone">{{this.phone}}</td>
+                            </tr>
+                        </table>
+            {{/each}}
+        </div>
+       
+    </div>
+
+    {{!-- Modal ADD--}}
+     <div class="modal fade" id="addAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">THÊM ĐỊA CHỈ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="accAddForm">
+                <div class="form-group">
+                    <label for="username">Họ và tên:</label>
+                    <input type="text" class="form-control" id="addadd-name" value="">
+                </div>
+                 <div class="form-group">
+                    <label for="username">Địa chỉ:</label>
+                    <input type="text" class="form-control" id="addadd-stress" value="">
+                </div>
+                <div class="form-group">
+                    <label for="username">Tỉnh/Thành:</label>
+                    <select name="addadd-province" id="addadd-province">
+
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="username">Quận/Huyện:</label>
+                    <select name="addadd-district" id="addadd-district">
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Phường/Xã:</label>
+                    <select name="addadd-ward" id="addadd-ward">
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Số điện thoại:</label>
+                    <input type="text" name="addadd-phone" id="addadd-phone">
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-success" id="addAddBtn">Thêm</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{{!-- End Modal Add --}}
+{{!-- Modal Update --}}
+<div class="modal fade" id="addUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">SỬA ĐỊA CHỈ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="accAddForm">
+                <div class="form-group">
+                    <label for="username">Họ và tên:</label>
+                    <input type="text" class="form-control" id="addupdate-name" value="">
+                </div>
+                 <div class="form-group">
+                    <label for="username">Địa chỉ:</label>
+                    <input type="text" class="form-control" id="addupdate-stress" value="">
+                </div>
+                <div class="form-group">
+                    <label for="username">Tỉnh/Thành:</label>
+                    <select name="addadd-province" id="addupdate-province">
+
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="username">Quận/Huyện:</label>
+                    <select name="addadd-district" id="addupdate-district">
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Phường/Xã:</label>
+                    <select name="addadd-ward" id="addupdate-ward">
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Số điện thoại:</label>
+                    <input type="text" name="addadd-phone" id="addupdate-phone">
+                </div>
+                <input type="hidden" id="addupdate-id">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-success" id="addUpdateBtn">Sửa</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{{!-- End Modal Update --}}
+<script src="/js/userInfo.js"></script>
